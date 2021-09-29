@@ -20,11 +20,11 @@ function App() {
 
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/club" component={Club} />
 
         {/* 👇 UPDATE THE EXISTING ROUTES 👇  */}
-        <PrivateRoute exact path="/Club" component={Club} />
-        <PrivateRoute exact path="/Jugadas" component={Jugadas} />
-        <PrivateRoute exact path="/Pretemporada" component={Pretemporada} />
+        <PrivateRoute exact path="/jugadas" component={Jugadas} />
+        <PrivateRoute exact path="/pretemporada" component={Pretemporada} />
         <PrivateRoute
           exact
           path="/projects/:id"

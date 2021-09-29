@@ -11,10 +11,10 @@ function Navbar() {
   return (
     <nav>
       <Link to="/">
-        <button>Home</button>
         <img src={logo} />
+        <button>Home</button>
       </Link>
-      <Link to="/Club">
+      <Link to="/club">
         <button>Club</button>
       </Link>
       -
