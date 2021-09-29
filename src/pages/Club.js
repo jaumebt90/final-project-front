@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import ApiClub from "../services/ApiClub";
+import Api from "../services/ApiCall";
 
 function Club() {
   /*const [countriesData, setCountries] = useState([]);*/
   useEffect(() => {
-    const API = new ApiClub();
+    const API = new Api();
     API.getInfo()
       .then((result) => {
         console.log(result);
