@@ -11,6 +11,7 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import PrivateRoute from "./components/PrivateRoute"; // <== IMPORT
 import AnonRoute from "./components/AnonRoute"; // <== IMPORT
+import Club from "./pages/Club";
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
         <Route exact path="/" component={HomePage} />
 
         {/* 👇 UPDATE THE EXISTING ROUTES 👇  */}
-        <PrivateRoute exact path="/projects" component={ProjectListPage} />
+        <PrivateRoute exact path="/Club" component={Club} />
+        <PrivateRoute exact path="/Jugadas" component={Jugadas} />
+        <PrivateRoute exact path="/Pretemporada" component={Pretemporada} />
         <PrivateRoute
           exact
           path="/projects/:id"
