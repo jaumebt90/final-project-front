@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";                       // <== IMPORT 
-import { AuthContext } from "./../context/auth.context";  // <== IMPORT
+import logo from "../assets/escudoRacing.jpg";
+import { useContext } from "react"; // <== IMPORT
+import { AuthContext } from "./../context/auth.context"; // <== IMPORT
 
 function Navbar() {
   // Subscribe to the AuthContext to gain access to
@@ -11,22 +12,32 @@ function Navbar() {
     <nav>
       <Link to="/">
         <button>Home</button>
+        <img src={logo} />
       </Link>
--
-      {isLoggedIn
-        ? (<>
-            <Link to="/projects">
-              <button>Projects</button>
-            </Link>
-            <button onClick={logOutUser}>Logout</button>
-            <span>{user.name}</span>
-          </>)
-        : 
-        (<>
-          <Link to="/signup"> <button>Signup</button> </Link>
-          <Link to="/login"> <button>Login</button> </Link>
-        </>)
-      }
+      <Link to="/Club">
+        <button>Club</button>
+      </Link>
+      -
+      {isLoggedIn ? (
+        <>
+          <Link to="/projects">
+            <button>Projects</button>
+          </Link>
+          <button onClick={logOutUser}>Logout</button>
+          <span>{user.name}</span>
+        </>
+      ) : (
+        <>
+          <Link to="/signup">
+            {" "}
+            <button>Signup</button>{" "}
+          </Link>
+          <Link to="/login">
+            {" "}
+            <button>Login</button>{" "}
+          </Link>
+        </>
+      )}
     </nav>
   );
 }
