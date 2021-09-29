@@ -6,15 +6,27 @@ import { Carousel } from "react-bootstrap";
 function Carrousel() {
   return (
     <div className="carousel">
-      <Carousel fade controls={true}>
+      <Carousel fade>
         <Carousel.Item>
-          <img className="d-block w-50 c " src={img1} alt="First slide" />
+          <img
+            className="carousel d-block w-100"
+            src={img1}
+            alt="First slide"
+          />
         </Carousel.Item>
         <Carousel.Item>
-          <img className="d-block w-50 c" src={img2} alt="Second slide" />
+          <img
+            className="carousel d-block w-100"
+            src={img2}
+            alt="Second slide"
+          />
         </Carousel.Item>
         <Carousel.Item>
-          <img className="d-block w-50 c" src={img3} alt="Third slide" />
+          <img
+            className="carousel d-block w-100"
+            src={img3}
+            alt="Third slide"
+          />
         </Carousel.Item>
       </Carousel>
     </div>
