@@ -1,14 +1,4 @@
 
-function Jugadas() {
-    return (
-      <div>
-        <h1>Jugadas</h1>
-      </div>
-    );
-  }
-  
-  export default Jugadas;
-
 import { useState, useEffect } from "react";
 import axios from "axios";
 import JugadaCard from "./../components/JugadaCard";
