@@ -37,14 +37,16 @@
   }
 }
 
-.carousel{
-  max-width: 1000px;
-  max-height: 200px;
-  object-fit: contain;
+.carousel {
+  /*max-width: 1000px;
+  max-height: 500px;*/
+  object-fit: scale-down;
+  display: flex;
+  justify-content: center;
 }
 
-.carousel img{
+/*.carousel img {
   max-width: 1000px;
   /* max-height: 200px;
-  object-fit: contain; */
-}
+  object-fit: contain; 
+}*/
