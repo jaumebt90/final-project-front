@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import axios from "axios";
 import JugadaCard from "./../components/JugadaCard";
@@ -30,4 +29,3 @@ function Jugadas() {
 }
 
 export default Jugadas;
-

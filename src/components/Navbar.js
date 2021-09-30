@@ -26,7 +26,7 @@ function Barra() {
                     <Nav.Link href="/jugadas">Jugadas</Nav.Link>
                     <Nav.Link href="/pretemporada">Pretemporada</Nav.Link>
                     <NavDropdown.Divider />
-                    <Nav.Link href="/logout">Logout</Nav.Link>
+                    <Nav.Link onClick={logOutUser}>Logout</Nav.Link>
                   </>
                 ) : (
                   <>

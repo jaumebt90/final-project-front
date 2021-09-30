@@ -17,7 +17,7 @@ function Club() {
     <div className="club">
       <h1>Bienvenidos al +++++++++++++</h1>
 
-      <p>
+      <p className="texto">
         Su primera temporada en el 'antiguo' San Paolo, lastrada por una lesión
         de hombro, no fue excelsa. Aún así, marcó 10 goles en 1.866 minutos.
         Ahora, en cambio, no hay quien le pare. 'Osi' suma seis goles -cuatro en
