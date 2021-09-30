@@ -23,6 +23,7 @@ function Navbar() {
           <Link to="/jugadas">
             <button>Jugadas</button>
           </Link>
+
           <Link to="/pretemporada">
             <button>Pretemporada</button>
           </Link>
