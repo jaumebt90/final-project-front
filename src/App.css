@@ -62,5 +62,7 @@
 .texto {
   justify-content: center;
   display: flex;
-  margin-top: 20px;
+  margin-top: 30px;
+  text-align: center;
+  position: absolute;
 }
