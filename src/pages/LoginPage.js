@@ -5,7 +5,6 @@ import { AuthContext } from "./../context/auth.context";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-
 function LoginPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,29 +12,29 @@ function LoginPage(props) {
 
   const { logInUser } = useContext(AuthContext);
 
-
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
-  
   const handleLoginSubmit = (e) => {
+    // console.log("HOLA QUE TAL");
     e.preventDefault();
     const requestBody = { email, password };
 
-    axios.post(`${API_URL}/auth/login`, requestBody)
+    axios
+      .post(`${API_URL}/auth/login`, requestBody)
       .then((response) => {
         console.log("JWT token", response.data.authToken);
-        
+
         const token = response.data.authToken;
         logInUser(token);
         props.history.push("/");
       })
       .catch((error) => {
-      	const errorDescription = error.response.data.message;
-      	setErrorMessage(errorDescription);
-    	})
+        const errorDescription = error.response.data.message;
+        setErrorMessage(errorDescription);
+      });
   };
-  
+
   return (
     <div className="LoginPage">
       <h1>Login</h1>
@@ -45,16 +44,21 @@ function LoginPage(props) {
         <input type="text" name="email" value={email} onChange={handleEmail} />
 
         <label>Password:</label>
-        <input type="password" name="password" value={password} onChange={handlePassword} />
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={handlePassword}
+        />
 
         <button type="submit">Login</button>
       </form>
-      { errorMessage && <p className="error-message">{errorMessage}</p> }
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Don't have an account yet?</p>
       <Link to={"/signup"}> Sign Up</Link>
     </div>
-  )
+  );
 }
 
 export default LoginPage;
