@@ -53,3 +53,8 @@
 .navbar {
   background-color: rgb(51, 75, 148);
 }
+
+.logo {
+  width: 50px;
+  height: 50px;
+}

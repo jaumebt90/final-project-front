@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <nav>
       <Link to="/">
-        <img src={logo} />
+        {/* <img src={logo} /> */}
         <button>Home</button>
       </Link>
       <Link to="/club">

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/escudoRacing.jpg";
+import logo from "../assets/escudoRacing.jpeg";
 import { useContext } from "react"; // <== IMPORT
 import { AuthContext } from "./../context/auth.context"; // <== IMPORT
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
@@ -13,7 +13,7 @@ function Barra() {
     <>
       <Navbar expand="lg" className="navbar">
         <Container>
-          <Navbar.Brand href="#home">Home</Navbar.Brand>
+          <img className="logo" src={logo} />
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -23,6 +23,9 @@ function Barra() {
                 {isLoggedIn ? (
                   <>
                     <Nav.Link href="/profile">Profile</Nav.Link>
+                    <Nav.Link href="/jugadas">Jugadas</Nav.Link>
+                    <Nav.Link href="/pretemporada">Pretemporada</Nav.Link>
+                    <NavDropdown.Divider />
                     <Nav.Link href="/logout">Logout</Nav.Link>
                   </>
                 ) : (
