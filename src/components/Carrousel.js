@@ -32,5 +32,4 @@ function Carrousel() {
     </div>
   );
 }
-
 export default Carrousel;
