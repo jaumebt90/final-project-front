@@ -10,7 +10,7 @@ function LoginPage(props) {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
-  const { logInUser } = useContext(AuthContext);
+  const { logInUser, userData, setUserData } = useContext(AuthContext);
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -23,10 +23,13 @@ function LoginPage(props) {
     axios
       .post(`${API_URL}/auth/login`, requestBody)
       .then((response) => {
+        // console.log(response.data)
         console.log("JWT token", response.data.authToken);
 
         const token = response.data.authToken;
         logInUser(token);
+        setUserData(response.data.user);
+        console.log("ENTRA AL SETUSER", response.data.user);
         props.history.push("/");
       })
       .catch((error) => {
