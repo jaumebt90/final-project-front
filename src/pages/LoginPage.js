@@ -1,6 +1,6 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { AuthContext } from "./../context/auth.context";
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -9,9 +9,18 @@ function LoginPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
+  const history = useHistory()
 
-  const { logInUser, userData, setUserData } = useContext(AuthContext);
-
+  
+  const { logInUser, userData, setUserData, verifyCoach } =
+  useContext(AuthContext);
+  
+  useEffect(() => {
+    if(userData&&userData.rol){
+      history.push("/")
+    }
+  }, [userData])
+  
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
@@ -30,10 +39,10 @@ function LoginPage(props) {
         logInUser(token);
         setUserData(response.data.user);
         console.log("ENTRA AL SETUSER", response.data.user);
-        props.history.push("/");
+        
       })
       .catch((error) => {
-        const errorDescription = error.response.data.message;
+        const errorDescription = error&&error.response&&error.response.data&&error.response.data.message;
         setErrorMessage(errorDescription);
       });
   };

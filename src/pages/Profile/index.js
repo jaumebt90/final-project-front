@@ -10,11 +10,12 @@ import "./styles.css";
 
 function Profile() {
   const { userData, isCoach, verifyCoach } = useContext(AuthContext);
-  console.log(userData);
 
-  useEffect(() => {
-    verifyCoach();
-  }, []);
+  // useEffect(() => {
+  //   verifyCoach();
+  // }, []);
+
+  console.log(userData)
 
   return (
     <div>
@@ -25,7 +26,7 @@ function Profile() {
             <Link to="/profile/edit">Editar Perfil </Link>
           </div>
 
-          {isCoach ? (
+          {userData.rol ? (
             <>
               <div className="menu-item">
                 <Link to="/profile/add-news">Añadir Noticias</Link>

@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Carrousel from "../components/Carrousel";
 import axios from "axios";
-import NewCard from "./../components/NewCard"
+import NewCard from "./../components/NewCard";
+import { AuthContext } from "./../context/auth.context";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
 function HomePage() {
+  const { userData, isCoach } = useContext(AuthContext);
   const [news, setNews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
 
   const getNews = () => {
     // Get the token from the localStorage
@@ -17,22 +20,37 @@ function HomePage() {
       .get(`${API_URL}/`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
-      .then((response) => setNews(response.data))
+      .then((response) => {
+        const recentNews = response.data.splice(response.data.length - 3, 3);
+        recentNews.reverse();
+        setNews(recentNews);
+        setIsLoading(false)
+      })
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
+    
     getNews();
   }, []);
 
-  console.log("LAS NEWS AQUI", news)
+  const handleDelete = (id) => {
+    axios
+    .delete(`${API_URL}/news/${id}`)
+    .then(() => getNews())
+  }
+
+  console.log("LAS NEWS AQUI", news);
 
   return (
     <div>
       <h1>Home Page</h1>
       <Carrousel />
-
-      { news?.map((notice) => <NewCard key={notice._id} {...notice} />  )}
+    <div className="home-news">
+      { isLoading ? <p>Loading...</p> : news?.map((notice) => (
+        <NewCard key={notice._id} {...notice} handleDelete={handleDelete} />
+      ))}
+      </div>
     </div>
   );
 }

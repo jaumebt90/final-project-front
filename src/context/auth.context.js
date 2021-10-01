@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom"
 import axios from "axios";
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -9,13 +10,14 @@ function AuthProviderWrapper(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
   const [userData, setUserData] = useState();
-  const [isCoach, setIsCoach] = useState(false)
+  const [isCoach, setIsCoach] = useState(false);
+  const history = useHistory()
 
   const verifyCoach = () => {
-    if(userData.rol === "coach" ) {
-      setIsCoach(true)
+    if (userData.rol === "coach") {
+      setIsCoach(true);
     }
-  }
+  };
 
   const verifyStoredToken = () => {
     // console.log("ENTRA AL VERIFY");
@@ -62,13 +64,16 @@ function AuthProviderWrapper(props) {
     */
   };
 
-  const logOutUser = (history) => {
+  const logOutUser = () => {
+    console.log("ESTA LOGOUT")
     // Upon logout, remove the token from the localStorage
     localStorage.removeItem("authToken");
     setIsLoggedIn(false);
 
     // Update the state variables
     setUser(null);
+    history.push("/login");
+    window.location.reload()
   };
 
   useEffect(() => {
@@ -86,10 +91,11 @@ function AuthProviderWrapper(props) {
         userData,
         setUserData,
         verifyCoach,
-        isCoach
+        isCoach,
       }}
     >
       {props.children}
+      {console.log(userData)}
     </AuthContext.Provider>
   );
 }

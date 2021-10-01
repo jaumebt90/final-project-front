@@ -1,5 +1,3 @@
-
-
 .App {
   text-align: center;
 }
@@ -71,4 +69,8 @@
   margin-right: 600px;
 }
 
-
+.home-news {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+}
