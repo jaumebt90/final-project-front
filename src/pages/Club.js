@@ -1,19 +1,35 @@
 import { useState, useEffect } from "react";
-import Api from "../services/ApiCall";
+import axios from "axios";
+import PlayerCard from "../components/PlayerCard";
+//import Player from "./Profile/Team";
 //import PlayerModel from "../../../final-project/models/Player.model";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function Club() {
-  /*const [countriesData, setCountries] = useState([]);*/
-  useEffect(() => {
-    const API = new Api();
-    API.getInfo()
-      .then((result) => {
-        console.log(result);
+  const [players, setPlayers] = useState([]);
+
+  const getAllPlayers = () => {
+    // Get the token from the localStorage
+    const storedToken = localStorage.getItem("authToken");
+
+    // Send the token through the request "Authorization" Headers
+    axios
+      .get(`${API_URL}/club`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .then((response) => {
+        setPlayers(response.data);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  // We set this effect will run only once, after the initial render
+  // by setting the empty dependency array - []
+  useEffect(() => {
+    getAllPlayers();
   }, []);
+  console.log("los jugadores aqui", players);
   return (
     <div className="club">
       <h1>Bienvenidos al +++++++++++++</h1>
@@ -26,6 +42,9 @@ function Club() {
           tratará de ampliar en la UEFA Europa League frente al Spartak Moscú.
         </p>
       </div>
+      {players?.map((player) => (
+        <PlayerCard key={player._id} {...player} />
+      ))}
     </div>
   );
 }
