@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import axios from "axios";
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 export default function Player() {
   const [name, setName] = useState(null);
@@ -27,7 +30,26 @@ export default function Player() {
     setHobbie(e.target.value);
   }
 
-  function handleSubmit() {}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const requestBody = { name, alias, number, position, hobbie };
+
+    const storedToken = localStorage.getItem("authToken");
+
+    axios
+      .post(`${API_URL}/players`, requestBody, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then((response) => {
+        //Reset the state
+        setName("");
+        setAlias("");
+        setNumber("");
+        setPosition("");
+        setHobbie("");
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div>
