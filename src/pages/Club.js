@@ -49,6 +49,13 @@ function Club() {
     getAllStaff();
   }, []);
   console.log("los jugadores aqui", players);
+
+  const handleStaffDelete = (id)  => {
+    axios 
+      .delete(`${API_URL}/club/staff/${id}`)
+      .then(() => getAllStaff())
+  }
+
   return (
     <div className="club">
       <h1>Bienvenidos al +++++++++++++</h1>
@@ -63,7 +70,7 @@ function Club() {
       </div>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5 my-5">
         {staff?.map((staff) => (
-          <StaffCard key={staff._id} {...staff} />
+          <StaffCard key={staff._id} {...staff} handleStaffDelete={handleStaffDelete}/>
         ))}
       </div>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5 my-5">
