@@ -5,6 +5,7 @@ import { AuthContext } from "./../../context/auth.context";
 import EditProfile from "./EditProfile";
 import AddNews from "./AddNews";
 import Team from "./Team";
+import Tec from "./Tec";
 
 import "./styles.css";
 
@@ -32,6 +33,9 @@ function Profile() {
                 <Link to="/profile/add-news">Añadir Noticias</Link>
               </div>
               <div className="menu-item">
+                <Link to="/profile/tec">Añadir Staff</Link>
+              </div>
+              <div className="menu-item">
                 <Link to="/profile/team">Añadir Plantilla</Link>
               </div>
             </>
@@ -40,6 +44,7 @@ function Profile() {
         <div className="content">
           <PrivateRoute exact path="/profile/edit" component={EditProfile} />
           <PrivateRoute exact path="/profile/add-news" component={AddNews} />
+          <PrivateRoute exact path="/profile/tec" component={Tec} />
           <PrivateRoute exact path="/profile/team" component={Team} />
         </div>
       </div>

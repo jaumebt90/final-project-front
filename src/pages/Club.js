@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PlayerCard from "../components/PlayerCard";
+import StaffCard from "../components/StaffCard";
 //import Player from "./Profile/Team";
 //import PlayerModel from "../../../final-project/models/Player.model";
 
@@ -8,6 +9,23 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 function Club() {
   const [players, setPlayers] = useState([]);
+  const [staff, setStaff] = useState([]);
+
+  const getAllStaff = () => {
+    // Get the token from the localStorage
+    const storedToken = localStorage.getItem("authToken");
+
+    // Send the token through the request "Authorization" Headers
+    axios
+      .get(`${API_URL}/club/staff`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then((response) => {
+        //console.log("miembros equipo", response.data);
+        setStaff(response.data);
+      })
+      .catch((error) => console.log(error));
+  };
 
   const getAllPlayers = () => {
     // Get the token from the localStorage
@@ -15,7 +33,7 @@ function Club() {
 
     // Send the token through the request "Authorization" Headers
     axios
-      .get(`${API_URL}/club`, {
+      .get(`${API_URL}/club/players`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
@@ -28,6 +46,7 @@ function Club() {
   // by setting the empty dependency array - []
   useEffect(() => {
     getAllPlayers();
+    getAllStaff();
   }, []);
   console.log("los jugadores aqui", players);
   return (
@@ -42,9 +61,16 @@ function Club() {
           tratará de ampliar en la UEFA Europa League frente al Spartak Moscú.
         </p>
       </div>
-      {players?.map((player) => (
-        <PlayerCard key={player._id} {...player} />
-      ))}
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5 my-5">
+        {staff?.map((staff) => (
+          <StaffCard key={staff._id} {...staff} />
+        ))}
+      </div>
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5 my-5">
+        {players?.map((player) => (
+          <PlayerCard key={player._id} {...player} />
+        ))}
+      </div>
     </div>
   );
 }
