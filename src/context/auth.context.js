@@ -9,6 +9,13 @@ function AuthProviderWrapper(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
   const [userData, setUserData] = useState();
+  const [isCoach, setIsCoach] = useState(false)
+
+  const verifyCoach = () => {
+    if(userData.rol === "coach" ) {
+      setIsCoach(true)
+    }
+  }
 
   const verifyStoredToken = () => {
     // console.log("ENTRA AL VERIFY");
@@ -78,6 +85,8 @@ function AuthProviderWrapper(props) {
         logOutUser,
         userData,
         setUserData,
+        verifyCoach,
+        isCoach
       }}
     >
       {props.children}
