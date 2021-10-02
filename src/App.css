@@ -52,8 +52,10 @@
 }*/
 .navbar {
   background-color: rgb(51, 75, 148);
-  color: white;
-  text-decoration: none;
+}
+
+.header .nav + {
+  color: white !important;
 }
 
 .logo {
@@ -75,11 +77,22 @@
   flex-direction: row;
 }
 
-/* .staff {
-  display: flex;
-}
-
 .players {
   display: flex;
   display: inline-flex;
-} */
+}
+*/ .opciones {
+  border: chartreuse;
+}
+
+.staff {
+  text-decoration-line: underline;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.jugadores {
+  text-decoration-line: underline;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}

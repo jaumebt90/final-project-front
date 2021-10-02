@@ -9,7 +9,18 @@ function StaffCard({ name, alias, position, hobbies, _id, handleStaffDelete }) {
   return (
     <div className="StaffCard card">
       <h3>{name}</h3>
-      <p style={{ maxWidth: "400px" }}>{alias} </p>
+      <p style={{ maxWidth: "400px" }}>
+        <u>Apodo: </u>
+        {alias}{" "}
+      </p>
+      <p>
+        <u>Posicion: </u>
+        {position}
+      </p>
+      <p>
+        <u>Hobbies: </u>
+        {hobbies}
+      </p>
       {userData && userData.rol === "coach" ? (
         <>
           <button onClick={() => handleStaffDelete(_id)}>Borrar</button>

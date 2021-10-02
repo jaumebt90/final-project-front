@@ -16,7 +16,21 @@ function PlayerCard({
   return (
     <div className="PlayerCard card">
       <h3>{name}</h3>
-      <p style={{ maxWidth: "400px" }}>{alias} </p>
+      <p style={{ maxWidth: "400px" }}>
+        <u>Apodo: </u>
+        {alias}{" "}
+      </p>
+      <p>
+        <u>Numero: </u> {number}
+      </p>
+      <p>
+        <u>Posicion: </u>
+        {position}
+      </p>
+      <p>
+        <u>Aficiones: </u>
+        {hobbies}
+      </p>
       {userData && userData.rol === "coach" ? (
         <>
           <button onClick={() => handlePlayerDelete(_id)}>Borrar</button>
