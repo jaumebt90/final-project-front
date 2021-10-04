@@ -8,7 +8,7 @@ function PlayerCard({
   alias,
   number,
   position,
-  hobbies,
+  hobbie,
   _id,
   handlePlayerDelete,
 }) {
@@ -29,7 +29,7 @@ function PlayerCard({
       </p>
       <p>
         <u>Aficiones: </u>
-        {hobbies}
+        {hobbie}
       </p>
       {userData && userData.rol === "coach" ? (
         <>

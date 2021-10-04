@@ -70,24 +70,29 @@ function Club() {
           tratará de ampliar en la UEFA Europa League frente al Spartak Moscú.
         </p>
       </div>
-      <div className="row cols-1 ">
+      <div className="row">
         <h2 className="staff">Staff</h2>
         {staff?.map((staff) => (
-          <StaffCard
-            key={staff._id}
-            {...staff}
-            handleStaffDelete={handleStaffDelete}
-          />
+          <div className="col-4">
+            <StaffCard
+              className="col-4"
+              key={staff._id}
+              {...staff}
+              handleStaffDelete={handleStaffDelete}
+            />
+          </div>
         ))}
       </div>
-      <div className="row row-cols-1">
+      <div className="row">
         <h2 className="jugadores">Jugadores</h2>
         {players?.map((player) => (
-          <PlayerCard
-            key={player._id}
-            {...player}
-            handlePlayerDelete={handlePlayerDelete}
-          />
+          <div className="col-4">
+            <PlayerCard
+              key={player._id}
+              {...player}
+              handlePlayerDelete={handlePlayerDelete}
+            />
+          </div>
         ))}
       </div>
     </div>

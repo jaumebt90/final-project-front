@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "./../context/auth.context";
 
 // We are deconstructing props object directly in the parentheses of the function
-function StaffCard({ name, alias, position, hobbies, _id, handleStaffDelete }) {
+function StaffCard({ name, alias, position, hobbie, _id, handleStaffDelete }) {
   const { userData, isCoach } = useContext(AuthContext);
 
   return (
@@ -19,7 +19,7 @@ function StaffCard({ name, alias, position, hobbies, _id, handleStaffDelete }) {
       </p>
       <p>
         <u>Hobbies: </u>
-        {hobbies}
+        {hobbie}
       </p>
       {userData && userData.rol === "coach" ? (
         <>

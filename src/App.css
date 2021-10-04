@@ -52,9 +52,7 @@
 }*/
 .navbar {
   background-color: rgb(51, 75, 148);
-}
-
-.header .nav + {
+  font-size: xx-large;
   color: white !important;
 }
 
