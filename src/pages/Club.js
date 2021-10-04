@@ -57,9 +57,34 @@ function Club() {
     axios.delete(`${API_URL}/club/players/${id}`).then(() => getAllPlayers());
   };
 
+  let basePlayers = players.filter((player) => player.position === "Base");
+  console.log(basePlayers);
+
+  let escoltaPlayers = players.filter(
+    (player) => player.position === "Escolta"
+  );
+  console.log(basePlayers);
+
+  let aleroPlayers = players.filter((player) => player.position === "Alero");
+  console.log(basePlayers);
+
+  let alaPivotPlayers = players.filter(
+    (player) =>
+      player.position === "Ala-pívot" ||
+      player.position === "Ala Pívot" ||
+      player.position === "Ala pívot" ||
+      player.position === "Ala-pivot" ||
+      player.position === "Ala Pivot" ||
+      player.position === "Ala pivot"
+  );
+  console.log(basePlayers);
+
+  let pivotPlayers = players.filter((player) => player.position === "Pívot" || player.position === "Pivot");
+  console.log(basePlayers);
+
   return (
     <div className="club">
-      <h1 className='welcome'>Bienvenidos al +++++++++++++</h1>
+      <h1 className="welcome">Bienvenidos al +++++++++++++</h1>
       <div className="texto">
         <p>
           Su primera temporada en el 'antiguo' San Paolo, lastrada por una
@@ -70,7 +95,7 @@ function Club() {
         </p>
       </div>
       <h2 className="plantilla">Plantilla/equipo 2021-2022</h2>
-      <div className="row">
+      {/* <div className="row">
         <h3 className="jugadores">Jugadores</h3>
         {players?.map((player) => (
           <div className="col-4">
@@ -81,7 +106,73 @@ function Club() {
             />
           </div>
         ))}
+      </div> */}
+
+      <div className="row">
+        <h3 className="jugadores">Bases</h3>
+        {basePlayers?.map((player) => (
+          <div className="col-4">
+            <PlayerCard
+              key={player._id}
+              {...player}
+              handlePlayerDelete={handlePlayerDelete}
+            />
+          </div>
+        ))}
       </div>
+
+      <div className="row">
+        <h3 className="jugadores">Escoltas</h3>
+        {escoltaPlayers?.map((player) => (
+          <div className="col-4">
+            <PlayerCard
+              key={player._id}
+              {...player}
+              handlePlayerDelete={handlePlayerDelete}
+            />
+          </div>
+        ))}
+      </div>
+
+      <div className="row">
+        <h3 className="jugadores">Aleros</h3>
+        {aleroPlayers?.map((player) => (
+          <div className="col-4">
+            <PlayerCard
+              key={player._id}
+              {...player}
+              handlePlayerDelete={handlePlayerDelete}
+            />
+          </div>
+        ))}
+      </div>
+
+      <div className="row">
+        <h3 className="jugadores">Ala-Pívot</h3>
+        {alaPivotPlayers?.map((player) => (
+          <div className="col-4">
+            <PlayerCard
+              key={player._id}
+              {...player}
+              handlePlayerDelete={handlePlayerDelete}
+            />
+          </div>
+        ))}
+      </div>
+
+      <div className="row">
+        <h3 className="jugadores">Pívots</h3>
+        {pivotPlayers?.map((player) => (
+          <div className="col-4">
+            <PlayerCard
+              key={player._id}
+              {...player}
+              handlePlayerDelete={handlePlayerDelete}
+            />
+          </div>
+        ))}
+      </div>
+
       <div className="row">
         <h3 className="staff">Staff</h3>
         {staff?.map((staff) => (

@@ -61,6 +61,7 @@ export default function EditPlayerPage(props) {
 
         <label>Apodo:</label>
         <textarea
+          type="text"
           name="alias"
           value={alias}
           onChange={(e) => setAlias(e.target.value)}
@@ -68,6 +69,7 @@ export default function EditPlayerPage(props) {
 
         <label>Dorsal:</label>
         <input
+          type="number"
           name="number"
           value={number}
           onChange={(e) => setNumber(e.target.value)}
