@@ -119,6 +119,7 @@
 .PlayerCard {
   border-radius: 5%;
   background-color: rgb(51, 75, 148);
+  color: white;
 }
 
 .staffcard {
@@ -129,14 +130,26 @@
 .StaffCard {
   border-radius: 5%;
   background-color: rgb(51, 75, 148);
+  color: white;
 }
 
-.botostaff {
+.infocard {
+  text-align: start;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.botoedit {
+  background-color: green;
+  border-radius: 10%;
+}
+
+.botoborrar {
   background-color: red;
   border-radius: 10%;
 }
 
-.botoplayer {
-  background-color: red;
-  border-radius: 10%;
+.botones {
+  display: flex;
+  justify-content: center;
 }

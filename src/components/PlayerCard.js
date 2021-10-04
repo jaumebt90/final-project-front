@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./../context/auth.context";
+import imagen from "../assets/images.png";
 
 // We are deconstructing props object directly in the parentheses of the function
 function PlayerCard({
@@ -16,56 +17,38 @@ function PlayerCard({
   return (
     <div className="PlayerCard card">
       <div className="playercard">
-        <h3>{name}</h3>
+        <img src={imagen} alt=""></img>
+      </div>
+      <h3>{name}</h3>
+      <div className="infocard">
         <p style={{ maxWidth: "400px" }}>
           <u>Apodo: </u>
           {alias}{" "}
         </p>
         <p>
-          <u>Número: </u> {number}
+          <u>Numero: </u> {number}
         </p>
         <p>
-          <u>Posición: </u>
+          <u>Posicion: </u>
           {position}
         </p>
         <p>
-          <u>Hobbies: </u>
+          <u>Aficiones: </u>
           {hobbie}
         </p>
-        {userData && userData.rol === "coach" ? (
-          <>
-            <button
-              className="botoplayer"
-              onClick={() => handlePlayerDelete(_id)}
-            >
-              Borrar
-            </button>
-          </>
-        ) : null}
       </div>
-      <h3>{name}</h3>
-      <p style={{ maxWidth: "400px" }}>
-        <u>Apodo: </u>
-        {alias}{" "}
-      </p>
-      <p>
-        <u>Numero: </u> {number}
-      </p>
-      <p>
-        <u>Posicion: </u>
-        {position}
-      </p>
-      <p>
-        <u>Aficiones: </u>
-        {hobbie}
-      </p>
       {userData && userData.rol === "coach" ? (
-        <>
-          <button onClick={() => handlePlayerDelete(_id)}>Borrar</button>
+        <div className="botones">
           <Link to={`/player/edit/${_id}`}>
-            <button>Editar</button>
+            <button className="botoedit">Editar</button>
           </Link>
-        </>
+          <button
+            className="botoborrar"
+            onClick={() => handlePlayerDelete(_id)}
+          >
+            Borrar
+          </button>
+        </div>
       ) : null}
     </div>
   );
