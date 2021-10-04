@@ -43,7 +43,7 @@ export default function AddNews() {
         <input type="text" name="title" value={title} onChange={handleTitle} />
 
         <label>Descripción</label>
-        <input
+        <textarea
           type="text"
           name="description"
           value={description}

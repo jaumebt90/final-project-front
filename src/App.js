@@ -15,7 +15,8 @@ import Club from "./pages/Club";
 import Profile from "./pages/Profile";
 import EditNewPage from "./pages/EditNewPage";
 import EditStaffPage from "./pages/EditStaffPage";
-import EditPlayerPage from "./pages/EditPlayerPage"
+import EditPlayerPage from "./pages/EditPlayerPage";
+import EditPlayPage from "./pages/EditPlayPage";
 
 function App() {
   return (
@@ -29,10 +30,15 @@ function App() {
         {/* 👇 UPDATE THE EXISTING ROUTES 👇  */}
         <PrivateRoute path="/profile" component={Profile} />
         <PrivateRoute exact path="/plays" component={Jugadas} />
+        <PrivateRoute exact path="/plays/edit/:id" component={EditPlayPage} />
         <PrivateRoute exact path="/pretemporada" component={Pretemporada} />
         <PrivateRoute exact path="/news/edit/:id" component={EditNewPage} />
         <PrivateRoute exact path="/staff/edit/:id" component={EditStaffPage} />
-        <PrivateRoute exact path="/player/edit/:id" component={EditPlayerPage} />
+        <PrivateRoute
+          exact
+          path="/player/edit/:id"
+          component={EditPlayerPage}
+        />
         <PrivateRoute
           exact
           path="/projects/:id"

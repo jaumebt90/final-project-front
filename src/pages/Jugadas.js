@@ -7,31 +7,59 @@ const API_URL = process.env.REACT_APP_API_URL;
 function Jugadas() {
   const [jugadas, setJugadas] = useState([]);
 
-  const getAllJugadas = () => {
-
+  const getAllPlays = () => {
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
+
+    // Send the token through the request "Authorization" Headers
     axios
       .get(`${API_URL}/plays`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        setJugadas(response.data)})
+        setJugadas(response.data);
+      })
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
-    getAllJugadas();
+    getAllPlays();
   }, []);
 
-  console.log(jugadas)
+  const handlePlayDelete = (id) => {
+    axios.delete(`${API_URL}/plays/${id}`).then(() => getAllPlays());
+  };
+
+  let attackPlays = jugadas.filter((jugada) => jugada.type === "Ataque");
+
+  let defensePlays = jugadas.filter((jugada) => jugada.type === "Defensa");
+
+  console.log(jugadas);
 
   return (
     <div className="jugadasListPage">
       <h1>Jugadas</h1>
-      {jugadas?.map((jugada) => (
-        <JugadaCard key={jugada._id} {...jugada} />
-      ))}
+      <div>
+      <h2>Ataque</h2>
+        {attackPlays?.map((jugada) => (
+          <JugadaCard
+            key={jugada._id}
+            {...jugada}
+            handlePlayDelete={handlePlayDelete}
+          />
+        ))}
+      </div>
+
+      <div>
+        <h2>Defensa</h2>
+        {defensePlays?.map((jugada) => (
+          <JugadaCard
+            key={jugada._id}
+            {...jugada}
+            handlePlayDelete={handlePlayDelete}
+          />
+        ))}
+      </div>
     </div>
   );
 }

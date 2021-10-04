@@ -58,15 +58,15 @@ function Club() {
   };
 
   let basePlayers = players.filter((player) => player.position === "Base");
-  console.log(basePlayers);
+  
 
   let escoltaPlayers = players.filter(
     (player) => player.position === "Escolta"
   );
-  console.log(basePlayers);
+  
 
   let aleroPlayers = players.filter((player) => player.position === "Alero");
-  console.log(basePlayers);
+  
 
   let alaPivotPlayers = players.filter(
     (player) =>
@@ -77,10 +77,10 @@ function Club() {
       player.position === "Ala Pivot" ||
       player.position === "Ala pivot"
   );
-  console.log(basePlayers);
+  
 
   let pivotPlayers = players.filter((player) => player.position === "Pívot" || player.position === "Pivot");
-  console.log(basePlayers);
+  
 
   return (
     <div className="club">

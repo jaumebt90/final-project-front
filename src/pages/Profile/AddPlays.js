@@ -58,7 +58,8 @@ export default function AddPlays() {
 
         <label>Tipo de jugada</label>
         <select onChange={handleType}>
-          <option value="Ataque" >Ataque</option>
+          <option value="nothing">-</option>
+          <option value="Ataque">Ataque</option>
           <option value="Defensa">Defensa</option>
         </select>
 

@@ -55,6 +55,9 @@ export default function Player() {
     <div>
       Player
       <form className="">
+        <label>Foto</label>
+        <input type="file"/>
+
         <label>Nombre</label>
         <input type="text" name="name" value={name} onChange={handleName} />
 
