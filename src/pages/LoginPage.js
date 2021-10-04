@@ -38,7 +38,7 @@ function LoginPage(props) {
         const token = response.data.authToken;
         logInUser(token);
         setUserData(response.data.user);
-        console.log("ENTRA AL SETUSER", response.data.user);
+        
         
       })
       .catch((error) => {

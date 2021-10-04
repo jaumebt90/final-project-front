@@ -40,13 +40,18 @@ function HomePage() {
     .then(() => getNews())
   }
 
-  console.log("LAS NEWS AQUI", news);
+  
 
   return (
     <div>
       <h1>Home Page</h1>
       <Carrousel />
     <div className="home-news">
+      <div>
+        <h2 className="noticiero">
+          Últimas noticias
+        </h2>
+      </div>
       { isLoading ? <p>Loading...</p> : news?.map((notice) => (
         <NewCard key={notice._id} {...notice} handleDelete={handleDelete} />
       ))}

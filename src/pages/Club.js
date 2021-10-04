@@ -48,7 +48,7 @@ function Club() {
     getAllPlayers();
     getAllStaff();
   }, []);
-  console.log("los jugadores aqui", players);
+  
 
   const handleStaffDelete = (id) => {
     axios.delete(`${API_URL}/club/staff/${id}`).then(() => getAllStaff());

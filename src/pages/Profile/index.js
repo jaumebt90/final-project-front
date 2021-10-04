@@ -27,7 +27,7 @@ function Profile() {
             <Link to="/profile/edit">Editar Perfil </Link>
           </div>
 
-          {userData.rol ? (
+          {userData.rol === "coach" ? (
             <>
               <div className="menu-item">
                 <Link to="/profile/add-news">Añadir Noticias</Link>
