@@ -33,6 +33,27 @@ function StaffCard({ name, alias, position, hobbie, _id, handleStaffDelete }) {
           </>
         ) : null}
       </div>
+      <h3>{name}</h3>
+      <p style={{ maxWidth: "400px" }}>
+        <u>Apodo: </u>
+        {alias}{" "}
+      </p>
+      <p>
+        <u>Posicion: </u>
+        {position}
+      </p>
+      <p>
+        <u>Hobbies: </u>
+        {hobbie}
+      </p>
+      {userData && userData.rol === "coach" ? (
+        <>
+          <button onClick={() => handleStaffDelete(_id)}>Borrar</button>
+          <Link to={`/staff/edit/${_id}`}>
+            <button>Editar</button>
+          </Link>
+        </>
+      ) : null}
     </div>
   );
 }

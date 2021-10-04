@@ -41,7 +41,7 @@ export default function EditNewPage(props) {
             headers: { Authorization: `Bearer ${storedToken}` },
         })
       .then((response) => {
-        props.history.push(`/news/${newId}`);
+        props.history.push(`/`);
       });
   };
 

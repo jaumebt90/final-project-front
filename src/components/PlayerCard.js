@@ -43,6 +43,30 @@ function PlayerCard({
           </>
         ) : null}
       </div>
+      <h3>{name}</h3>
+      <p style={{ maxWidth: "400px" }}>
+        <u>Apodo: </u>
+        {alias}{" "}
+      </p>
+      <p>
+        <u>Numero: </u> {number}
+      </p>
+      <p>
+        <u>Posicion: </u>
+        {position}
+      </p>
+      <p>
+        <u>Aficiones: </u>
+        {hobbie}
+      </p>
+      {userData && userData.rol === "coach" ? (
+        <>
+          <button onClick={() => handlePlayerDelete(_id)}>Borrar</button>
+          <Link to={`/player/edit/${_id}`}>
+            <button>Editar</button>
+          </Link>
+        </>
+      ) : null}
     </div>
   );
 }

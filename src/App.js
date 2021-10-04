@@ -14,6 +14,8 @@ import AnonRoute from "./components/AnonRoute"; // <== IMPORT
 import Club from "./pages/Club";
 import Profile from "./pages/Profile";
 import EditNewPage from "./pages/EditNewPage";
+import EditStaffPage from "./pages/EditStaffPage";
+import EditPlayerPage from "./pages/EditPlayerPage"
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <PrivateRoute exact path="/jugadas" component={Jugadas} />
         <PrivateRoute exact path="/pretemporada" component={Pretemporada} />
         <PrivateRoute exact path="/news/edit/:id" component={EditNewPage} />
+        <PrivateRoute exact path="/staff/edit/:id" component={EditStaffPage} />
+        <PrivateRoute exact path="/player/edit/:id" component={EditPlayerPage} />
         <PrivateRoute
           exact
           path="/projects/:id"
