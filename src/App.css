@@ -55,6 +55,11 @@
   color: white !important;
 }
 
+.left {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .home {
   margin-top: 20px;
 }

@@ -19,7 +19,7 @@ function Barra() {
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
-            <Nav className="me-auto">
+            <Nav className="left">
               <Nav.Link
                 onClick={() => {
                   history.push("/");
@@ -34,7 +34,13 @@ function Barra() {
               >
                 Club
               </Nav.Link>
-              <NavDropdown title="Perfil" id="basic-nav-dropdown">
+            </Nav>
+            <Nav className='right'>
+              <NavDropdown
+                title="Perfil"
+                id="basic-nav-dropdown"
+                className="desplegable"
+              >
                 {isLoggedIn ? (
                   <>
                     <Nav.Link
