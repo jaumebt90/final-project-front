@@ -52,7 +52,7 @@ function Barra() {
                     </Nav.Link>
                     <Nav.Link
                       onClick={() => {
-                        history.push("/jugadas");
+                        history.push("/plays");
                       }}
                     >
                       Jugadas

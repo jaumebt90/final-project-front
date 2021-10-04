@@ -28,7 +28,7 @@ function App() {
 
         {/* 👇 UPDATE THE EXISTING ROUTES 👇  */}
         <PrivateRoute path="/profile" component={Profile} />
-        <PrivateRoute exact path="/jugadas" component={Jugadas} />
+        <PrivateRoute exact path="/plays" component={Jugadas} />
         <PrivateRoute exact path="/pretemporada" component={Pretemporada} />
         <PrivateRoute exact path="/news/edit/:id" component={EditNewPage} />
         <PrivateRoute exact path="/staff/edit/:id" component={EditStaffPage} />

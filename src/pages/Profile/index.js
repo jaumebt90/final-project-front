@@ -6,15 +6,13 @@ import EditProfile from "./EditProfile";
 import AddNews from "./AddNews";
 import Team from "./Team";
 import Tec from "./Tec";
+import AddPlays from "./AddPlays"
 
 import "./styles.css";
 
 function Profile() {
   const { userData, isCoach, verifyCoach } = useContext(AuthContext);
 
-  // useEffect(() => {
-  //   verifyCoach();
-  // }, []);
 
   console.log(userData);
 
@@ -38,6 +36,9 @@ function Profile() {
               <div className="menu-item">
                 <Link to="/profile/team">Añadir Plantilla</Link>
               </div>
+              <div className="menu-item">
+                <Link to="/profile/add-plays">Añadir Jugada</Link>
+              </div>
             </>
           ) : null}
         </div>
@@ -46,6 +47,7 @@ function Profile() {
           <PrivateRoute exact path="/profile/add-news" component={AddNews} />
           <PrivateRoute exact path="/profile/tec" component={Tec} />
           <PrivateRoute exact path="/profile/team" component={Team} />
+          <PrivateRoute exact path="/profile/add-plays" component={AddPlays}/>
         </div>
       </div>
     </div>

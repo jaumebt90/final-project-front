@@ -8,15 +8,23 @@ function Jugadas() {
   const [jugadas, setJugadas] = useState([]);
 
   const getAllJugadas = () => {
+
+    // Get the token from the localStorage
+    const storedToken = localStorage.getItem("authToken");
     axios
-      .get(`${API_URL}/jugadas`)
-      .then((response) => setJugadas(response.data))
+      .get(`${API_URL}/plays`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then((response) => {
+        setJugadas(response.data)})
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
     getAllJugadas();
   }, []);
+
+  console.log(jugadas)
 
   return (
     <div className="jugadasListPage">
