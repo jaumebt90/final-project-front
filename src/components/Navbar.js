@@ -41,7 +41,7 @@ function Barra() {
             <Nav className="col-3">
               <div className="right">
                 <NavDropdown
-                  title="Perfil"
+                  title="Mi Club"
                   id="basic-nav-dropdown"
                   className="desplegable"
                 >
@@ -52,7 +52,7 @@ function Barra() {
                           history.push("/profile");
                         }}
                       >
-                        Profile
+                        Perfil
                       </Nav.Link>
                       <Nav.Link
                         onClick={() => {
