@@ -54,6 +54,13 @@
   background-color: rgb(51, 75, 148);
   color: white !important;
 }
+.navbar-nav {
+  color: white;
+}
+
+#nav {
+  color: white;
+}
 
 .left {
   display: flex;
