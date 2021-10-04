@@ -15,27 +15,34 @@ function PlayerCard({
   const { userData } = useContext(AuthContext);
   return (
     <div className="PlayerCard card">
-      <h3>{name}</h3>
-      <p style={{ maxWidth: "400px" }}>
-        <u>Apodo: </u>
-        {alias}{" "}
-      </p>
-      <p>
-        <u>Numero: </u> {number}
-      </p>
-      <p>
-        <u>Posicion: </u>
-        {position}
-      </p>
-      <p>
-        <u>Aficiones: </u>
-        {hobbie}
-      </p>
-      {userData && userData.rol === "coach" ? (
-        <>
-          <button onClick={() => handlePlayerDelete(_id)}>Borrar</button>
-        </>
-      ) : null}
+      <div className="playercard">
+        <h3>{name}</h3>
+        <p style={{ maxWidth: "400px" }}>
+          <u>Apodo: </u>
+          {alias}{" "}
+        </p>
+        <p>
+          <u>Número: </u> {number}
+        </p>
+        <p>
+          <u>Posición: </u>
+          {position}
+        </p>
+        <p>
+          <u>Hobbies: </u>
+          {hobbie}
+        </p>
+        {userData && userData.rol === "coach" ? (
+          <>
+            <button
+              className="botoplayer"
+              onClick={() => handlePlayerDelete(_id)}
+            >
+              Borrar
+            </button>
+          </>
+        ) : null}
+      </div>
     </div>
   );
 }

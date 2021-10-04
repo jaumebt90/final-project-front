@@ -48,7 +48,6 @@ function Club() {
     getAllPlayers();
     getAllStaff();
   }, []);
-  
 
   const handleStaffDelete = (id) => {
     axios.delete(`${API_URL}/club/staff/${id}`).then(() => getAllStaff());
@@ -60,7 +59,7 @@ function Club() {
 
   return (
     <div className="club">
-      <h1>Bienvenidos al +++++++++++++</h1>
+      <h1 className='welcome'>Bienvenidos al +++++++++++++</h1>
       <div className="texto">
         <p>
           Su primera temporada en el 'antiguo' San Paolo, lastrada por una
@@ -70,8 +69,21 @@ function Club() {
           tratará de ampliar en la UEFA Europa League frente al Spartak Moscú.
         </p>
       </div>
+      <h2 className="plantilla">Plantilla/equipo 2021-2022</h2>
       <div className="row">
-        <h2 className="staff">Staff</h2>
+        <h3 className="jugadores">Jugadores</h3>
+        {players?.map((player) => (
+          <div className="col-4">
+            <PlayerCard
+              key={player._id}
+              {...player}
+              handlePlayerDelete={handlePlayerDelete}
+            />
+          </div>
+        ))}
+      </div>
+      <div className="row">
+        <h3 className="staff">Staff</h3>
         {staff?.map((staff) => (
           <div className="col-4">
             <StaffCard
@@ -79,18 +91,6 @@ function Club() {
               key={staff._id}
               {...staff}
               handleStaffDelete={handleStaffDelete}
-            />
-          </div>
-        ))}
-      </div>
-      <div className="row">
-        <h2 className="jugadores">Jugadores</h2>
-        {players?.map((player) => (
-          <div className="col-4">
-            <PlayerCard
-              key={player._id}
-              {...player}
-              handlePlayerDelete={handlePlayerDelete}
             />
           </div>
         ))}

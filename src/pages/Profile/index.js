@@ -16,11 +16,11 @@ function Profile() {
   //   verifyCoach();
   // }, []);
 
-  console.log(userData)
+  console.log(userData);
 
   return (
     <div>
-      <h1>Bienvenido {userData.name}</h1>
+      <h1 className="nombreperfil">Bienvenido {userData.name}</h1>
       <div className="inner-container">
         <div className="menu">
           <div className="menu-item">

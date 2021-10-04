@@ -52,8 +52,11 @@
 }*/
 .navbar {
   background-color: rgb(51, 75, 148);
-  font-size: xx-large;
   color: white !important;
+}
+
+.home {
+  margin-top: 20px;
 }
 
 .logo {
@@ -79,18 +82,61 @@
   display: flex;
   display: inline-flex;
 }
-*/ .opciones {
+
+.opciones {
   border: chartreuse;
 }
 
 .staff {
-  text-decoration-line: underline;
-  margin-bottom: 50px;
+  /* text-decoration-line: underline; */
+  margin-bottom: 30px;
+  margin-top: 60px;
+  text-align: start;
+  margin-left: 120px;
+}
+
+.welcome {
   margin-top: 30px;
 }
 
 .jugadores {
-  text-decoration-line: underline;
-  margin-bottom: 50px;
-  margin-top: 50px;
+  /* text-decoration-line: underline; */
+  margin-bottom: 40px;
+  margin-top: 60px;
+  text-align: start;
+  margin-left: 120px;
+}
+
+.plantilla {
+  margin-top: 70px;
+}
+
+.playercard {
+  background-color: white;
+  border-radius: 10%;
+}
+
+.PlayerCard {
+  border-radius: 5%;
+  background-color: rgb(51, 75, 148);
+}
+
+.staffcard {
+  background-color: white;
+  border-radius: 10%;
+}
+
+.StaffCard {
+  border-radius: 5%;
+  background-color: rgb(51, 75, 148);
+}
+
+.botostaff {
+  background-color: red;
+  border-radius: 10%;
+}
+
+.botoplayer {
+  background-color: red;
+  border-radius: 10%;
 }
