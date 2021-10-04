@@ -58,15 +58,12 @@ function Club() {
   };
 
   let basePlayers = players.filter((player) => player.position === "Base");
-  
 
   let escoltaPlayers = players.filter(
     (player) => player.position === "Escolta"
   );
-  
 
   let aleroPlayers = players.filter((player) => player.position === "Alero");
-  
 
   let alaPivotPlayers = players.filter(
     (player) =>
@@ -77,10 +74,10 @@ function Club() {
       player.position === "Ala Pivot" ||
       player.position === "Ala pivot"
   );
-  
 
-  let pivotPlayers = players.filter((player) => player.position === "Pívot" || player.position === "Pivot");
-  
+  let pivotPlayers = players.filter(
+    (player) => player.position === "Pívot" || player.position === "Pivot"
+  );
 
   return (
     <div className="club">
@@ -109,7 +106,7 @@ function Club() {
       </div> */}
 
       <div className="row">
-        <h3 className="jugadores">Bases</h3>
+        <h4 className="jugadores">Bases</h4>
         {basePlayers?.map((player) => (
           <div className="col-4">
             <PlayerCard
@@ -122,7 +119,7 @@ function Club() {
       </div>
 
       <div className="row">
-        <h3 className="jugadores">Escoltas</h3>
+        <h4 className="jugadores">Escoltas</h4>
         {escoltaPlayers?.map((player) => (
           <div className="col-4">
             <PlayerCard
@@ -135,7 +132,7 @@ function Club() {
       </div>
 
       <div className="row">
-        <h3 className="jugadores">Aleros</h3>
+        <h4 className="jugadores">Aleros</h4>
         {aleroPlayers?.map((player) => (
           <div className="col-4">
             <PlayerCard
@@ -148,7 +145,7 @@ function Club() {
       </div>
 
       <div className="row">
-        <h3 className="jugadores">Ala-Pívot</h3>
+        <h4 className="jugadores">Ala-Pívot</h4>
         {alaPivotPlayers?.map((player) => (
           <div className="col-4">
             <PlayerCard
@@ -161,7 +158,7 @@ function Club() {
       </div>
 
       <div className="row">
-        <h3 className="jugadores">Pívots</h3>
+        <h4 className="jugadores">Pívots</h4>
         {pivotPlayers?.map((player) => (
           <div className="col-4">
             <PlayerCard

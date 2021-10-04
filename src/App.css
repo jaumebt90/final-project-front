@@ -52,7 +52,6 @@
 }*/
 .navbar {
   background-color: rgb(51, 75, 148);
-  color: white !important;
 }
 .navbar-nav {
   color: white;
@@ -84,11 +83,11 @@
   margin-right: 600px;
 }
 
-.home-news {
+/* .home-news {
   margin-top: 100px;
   display: flex;
   flex-direction: row;
-}
+} */
 
 .players {
   display: flex;
@@ -166,4 +165,13 @@
 .botones {
   display: flex;
   justify-content: center;
+}
+
+.noticiero {
+  display: flex;
+  margin-left: 50px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }

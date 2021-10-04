@@ -8,7 +8,6 @@ const API_URL = process.env.REACT_APP_API_URL;
 // We are deconstructing props object directly in the parentheses of the function
 function NewCard({ title, description, _id, handleDelete }) {
   const { userData, isCoach } = useContext(AuthContext);
-  
 
   // useEffect(() => {
 
@@ -21,12 +20,14 @@ function NewCard({ title, description, _id, handleDelete }) {
       </Link>
       <p style={{ maxWidth: "400px" }}>{description} </p>
       {userData && userData.rol === "coach" ? (
-        <>
-          <button onClick={() => handleDelete(_id)}>Borrar</button>
+        <div className="botones">
           <Link to={`/news/edit/${_id}`}>
-            <button>Editar</button>
+            <button className="botoedit">Editar</button>
           </Link>
-        </>
+          <button className="botoborrar" onClick={() => handleDelete(_id)}>
+            Borrar
+          </button>
+        </div>
       ) : null}
     </div>
   );

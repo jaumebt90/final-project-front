@@ -42,16 +42,22 @@ function HomePage() {
       <h1 className="home">Home Page</h1>
       <Carrousel />
       <div className="home-news">
-        <div>
-          <h2 className="noticiero">Últimas noticias</h2>
+        <h2 className="noticiero">Últimas noticias</h2>
+        <div className="row">
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : (
+            news?.map((notice) => (
+              <div className="col-4">
+                <NewCard
+                  key={notice._id}
+                  {...notice}
+                  handleDelete={handleDelete}
+                />
+              </div>
+            ))
+          )}
         </div>
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          news?.map((notice) => (
-            <NewCard key={notice._id} {...notice} handleDelete={handleDelete} />
-          ))
-        )}
       </div>
     </div>
   );
