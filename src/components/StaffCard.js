@@ -23,7 +23,7 @@ function StaffCard({ name, alias, position, hobbie, _id, handleStaffDelete }) {
           {position}
         </p>
         <p>
-          <u>Hobbies: </u>
+          <u>Aficiones: </u>
           {hobbie}
         </p>
       </div>
