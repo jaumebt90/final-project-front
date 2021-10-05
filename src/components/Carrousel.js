@@ -5,8 +5,8 @@ import { Carousel } from "react-bootstrap";
 
 function Carrousel() {
   return (
-    <div className="carousel">
-      <Carousel fade>
+    <div>
+      <Carousel controls={false}>
         <Carousel.Item>
           <img
             className="carousel d-block w-100"

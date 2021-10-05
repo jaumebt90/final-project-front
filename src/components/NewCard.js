@@ -18,7 +18,9 @@ function NewCard({ title, description, _id, handleDelete }) {
       <Link to={`/projects/${_id}`}>
         <h3>{title}</h3>
       </Link>
+      <div className='descrip'>
       <p style={{ maxWidth: "400px" }}>{description} </p>
+      </div>
       {userData && userData.rol === "coach" ? (
         <div className="botones">
           <Link to={`/news/edit/${_id}`}>

@@ -104,7 +104,7 @@ function Club() {
           </div>
         ))}
       </div> */}
-
+    <div className='contenedor'>
       <div className="row">
         <h4 className="jugadores">Bases</h4>
         {basePlayers?.map((player) => (
@@ -183,6 +183,7 @@ function Club() {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }
