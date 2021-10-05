@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import UploadService from "./../../services/Upload.Service";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
 export default function Player() {
+  const [image, setImage] = useState("");
   const [name, setName] = useState(null);
   const [alias, setAlias] = useState(null);
   const [number, setNumber] = useState(null);
@@ -30,9 +32,22 @@ export default function Player() {
     setHobbie(e.target.value);
   }
 
+  function handleImageFile(e) {
+    const upload = new UploadService();
+
+    let formData = new FormData();
+
+    formData.append("file", e.target.files[0]);
+
+    upload
+      .fileUpload(formData)
+      .then((response) => setImage(response.data.imageUrl))
+      .catch((err) => console.log(err));
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { name, alias, number, position, hobbie };
+    const requestBody = { image, name, alias, number, position, hobbie };
 
     const storedToken = localStorage.getItem("authToken");
 
@@ -42,6 +57,7 @@ export default function Player() {
       })
       .then((response) => {
         //Reset the state
+        setImage("")
         setName("");
         setAlias("");
         setNumber("");
@@ -56,7 +72,7 @@ export default function Player() {
       Player
       <form className="">
         <label>Foto</label>
-        <input type="file"/>
+        <input type="file" name="image" onChange={handleImageFile} />
 
         <label>Nombre</label>
         <input type="text" name="name" value={name} onChange={handleName} />

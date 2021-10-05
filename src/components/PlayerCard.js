@@ -5,6 +5,7 @@ import imagen from "../assets/images.png";
 
 // We are deconstructing props object directly in the parentheses of the function
 function PlayerCard({
+  image,
   name,
   alias,
   number,
@@ -17,8 +18,13 @@ function PlayerCard({
   return (
     <div className="PlayerCard card">
       <div className="playercard">
-        <img src={imagen} alt=""></img>
-      </div>
+        {
+          image ?
+          <img src={image} alt="" style={{width: "278px"}} />
+          : 
+          null
+        }
+          </div>
       <h3>{name}</h3>
       <div className="infocard">
         <p style={{ maxWidth: "400px" }}>
