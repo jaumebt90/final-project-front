@@ -137,6 +137,7 @@
   background-color: rgb(51, 75, 148);
   color: white;
   width: 300px;
+  margin-left: 250px;
 }
 
 .staffcard {
@@ -149,6 +150,7 @@
   background-color: rgb(51, 75, 148);
   color: white;
   width: 300px;
+  margin-left: 250px;
 }
 
 .infocard {
@@ -184,4 +186,17 @@
 .descrip {
   justify-content: left;
   display: flex;
+}
+
+.oneNew {
+  margin-top: 50px;
+}
+
+.textdescrip {
+  margin-top: 40px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-left: 600px;
+  margin-right: 600px;
 }

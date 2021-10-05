@@ -25,16 +25,14 @@ export default function OneNewPage(props) {
     getNew();
   }, []);
 
-  console.log(notice)
+  console.log(notice);
 
   return (
-  <div className="oneNew">
+    <div className="oneNew">
       <h1>{notice?.title}</h1>
       <div>
-          <p>
-              {notice?.description}
-          </p>
+        <p className="textdescrip">{notice?.description}</p>
       </div>
-  </div>
+    </div>
   );
 }
