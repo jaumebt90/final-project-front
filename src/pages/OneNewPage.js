@@ -25,7 +25,6 @@ export default function OneNewPage(props) {
     getNew();
   }, []);
 
-  console.log(notice);
 
   return (
     <div className="oneNew">

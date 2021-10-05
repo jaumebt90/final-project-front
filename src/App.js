@@ -15,6 +15,7 @@ import EditNewPage from "./pages/EditNewPage";
 import EditStaffPage from "./pages/EditStaffPage";
 import EditPlayerPage from "./pages/EditPlayerPage";
 import EditPlayPage from "./pages/EditPlayPage";
+import OnePlayPage from "./pages/OnePlayPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/club" component={Club} />
         <Route exact path="/news/:id" component={OneNewPage} />
+        <Route exact path="/plays/:id" component={OnePlayPage} />
 
         {/* 👇 UPDATE THE EXISTING ROUTES 👇  */}
         <PrivateRoute path="/profile" component={Profile} />

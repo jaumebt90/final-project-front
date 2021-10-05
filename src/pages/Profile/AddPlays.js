@@ -1,12 +1,28 @@
 import React, { useState } from "react";
 import axios from "axios";
+import UploadService from "./../../services/Upload.Service";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
 export default function AddPlays() {
+  const [video, setVideo] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [type, setType] = useState("");
+
+  const handleVideoInput = (e) => {
+
+    const upload = new UploadService();
+
+    let formData = new FormData();
+
+    formData.append("file", e.target.files[0]);
+
+    upload
+      .fileUpload(formData)
+      .then((response) => setVideo(response.data.imageUrl))
+      .catch((err) => console.log(err));
+  };
 
   const handleTitle = (e) => {
     setTitle(e.target.value);
@@ -23,7 +39,7 @@ export default function AddPlays() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { title, description, type };
+    const requestBody = { video, title, description, type };
 
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
@@ -34,6 +50,7 @@ export default function AddPlays() {
       })
       .then((response) => {
         //Reset the state
+        setVideo("");
         setTitle("");
         setDescription("");
         setType("");
@@ -45,6 +62,14 @@ export default function AddPlays() {
     <div>
       Jugadas
       <form className="">
+        <label>Vídeo</label>
+        <input
+          type="file"
+          name="video"
+          accept="video/mp4,video/x-m4v,video/*"
+          onChange={handleVideoInput}
+        />
+
         <label>Nombre</label>
         <input type="text" name="title" value={title} onChange={handleTitle} />
 
