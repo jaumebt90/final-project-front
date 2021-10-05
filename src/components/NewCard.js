@@ -14,7 +14,7 @@ function NewCard({ title, description, _id, handleDelete }) {
   // }, []);
 
   const shortedDescription = () => {
-    console.log("ENTRA EN LA DESCRIPCIÓN", description)
+    console.log("ENTRA EN LA DESCRIPCIÓN", description);
     if (description?.length > 220) {
       return description.substring(0, 220) + "...";
     } else {
@@ -27,10 +27,10 @@ function NewCard({ title, description, _id, handleDelete }) {
       <Link to={`/news/${_id}`}>
         <h3>{title}</h3>
       </Link>
-      <div className='descrip'>
-      <p style={{ maxWidth: "400px" }}>{description} </p>
+      <div className="descrip">
+        {/* <p style={{ maxWidth: "400px" }}>{description} </p> */}
+        <p style={{ maxWidth: "400px" }}>{shortedDescription()} </p>
       </div>
-      <p style={{ maxWidth: "400px" }}>{shortedDescription()} </p>
       {userData && userData.rol === "coach" ? (
         <div className="botones">
           <Link to={`/news/edit/${_id}`}>
