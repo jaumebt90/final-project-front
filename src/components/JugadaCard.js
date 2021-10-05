@@ -29,8 +29,8 @@ function JugadaCard({
         {video ? (
           <ReactPlayer
             url={video}
-            playing="true"
-            controls="true"
+            playing={false}
+            controls={true}
             width="378px"
           />
         ) : null}
