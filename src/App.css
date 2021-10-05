@@ -127,6 +127,15 @@
   margin-top: 70px;
 }
 
+.botonsplant {
+  margin-top: 30px;
+}
+
+.botoplant {
+  background-color: blanchedalmond;
+  border: none;
+}
+
 .playercard {
   background-color: white;
   border-radius: 10%;

@@ -18,13 +18,17 @@ function PlayerCard({
   return (
     <div className="PlayerCard card">
       <div className="playercard">
-        {
-          image ?
-          <img src={image} alt="" style={{width: "278px"}} />
-          : 
-          null
-        }
-          </div>
+        {image ? (
+          <img
+            className="playercard"
+            src={image}
+            alt=""
+            style={{ width: "278px", height: "250px" }}
+          />
+        ) : (
+          <img src={imagen} alt="" />
+        )}
+      </div>
       <h3>{name}</h3>
       <div className="infocard">
         <p style={{ maxWidth: "400px" }}>

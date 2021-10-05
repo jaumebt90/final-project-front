@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import PlayerCard from "../components/PlayerCard";
 import StaffCard from "../components/StaffCard";
+import React, { useRef } from "react";
 //import Player from "./Profile/Team";
 //import PlayerModel from "../../../final-project/models/Player.model";
 
@@ -79,6 +80,19 @@ function Club() {
     (player) => player.position === "Pívot" || player.position === "Pivot"
   );
 
+  const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
+  // General scroll to element function
+
+  const object = {
+    myRefBases: useRef(null),
+    myRefEscoltas: useRef(null),
+    myRefAleros: useRef(null),
+    myRefAlaPivot: useRef(null),
+    myRefPivots: useRef(null),
+    myRefStaff: useRef(null),
+  };
+  const executeScroll = (position) => scrollToRef(object[position]);
+
   return (
     <div className="club">
       <h1 className="welcome">Bienvenidos al +++++++++++++</h1>
@@ -91,99 +105,128 @@ function Club() {
           tratará de ampliar en la UEFA Europa League frente al Spartak Moscú.
         </p>
       </div>
-      <h2 className="plantilla">Plantilla/equipo 2021-2022</h2>
-      {/* <div className="row">
-        <h3 className="jugadores">Jugadores</h3>
-        {players?.map((player) => (
-          <div className="col-4">
-            <PlayerCard
-              key={player._id}
-              {...player}
-              handlePlayerDelete={handlePlayerDelete}
-            />
-          </div>
-        ))}
-      </div> */}
-    <div className='contenedor'>
-      <div className="row">
-        <h4 className="jugadores">Bases</h4>
-        {basePlayers?.map((player) => (
-          <div className="col-4">
-            <PlayerCard
-              key={player._id}
-              {...player}
-              handlePlayerDelete={handlePlayerDelete}
-            />
-          </div>
-        ))}
-      </div>
+      <h2 className="plantilla">Plantilla</h2>
 
-      <div className="row">
-        <h4 className="jugadores">Escoltas</h4>
-        {escoltaPlayers?.map((player) => (
-          <div className="col-4">
-            <PlayerCard
-              key={player._id}
-              {...player}
-              handlePlayerDelete={handlePlayerDelete}
-            />
-          </div>
-        ))}
+      <div className="botonsplant">
+        <button
+          className="botoplant"
+          onClick={() => executeScroll("myRefBases")}
+        >
+          BASES
+        </button>
+        <button
+          className="botoplant"
+          onClick={() => executeScroll("myRefEscoltas")}
+        >
+          ESCOLTAS
+        </button>
+        <button
+          className="botoplant"
+          onClick={() => executeScroll("myRefAleros")}
+        >
+          ALEROS
+        </button>
+        <button
+          className="botoplant"
+          onClick={() => executeScroll("myRefAlaPivot")}
+        >
+          ALA-PÍVOTS
+        </button>
+        <button
+          className="botoplant"
+          onClick={() => executeScroll("myRefPivots")}
+        >
+          PÍVOTS
+        </button>
+        <>
+          <button
+            className="botoplant"
+            onClick={() => executeScroll("myRefStaff")}
+          >
+            STAFF
+          </button>
+        </>
       </div>
+      <div className="contenedor">
+        <div className="row" ref={object.myRefBases}>
+          <h4 className="jugadores">Bases</h4>
+          {basePlayers?.map((player) => (
+            <div className="col-4">
+              <PlayerCard
+                key={player._id}
+                {...player}
+                handlePlayerDelete={handlePlayerDelete}
+              />
+            </div>
+          ))}
+        </div>
 
-      <div className="row">
-        <h4 className="jugadores">Aleros</h4>
-        {aleroPlayers?.map((player) => (
-          <div className="col-4">
-            <PlayerCard
-              key={player._id}
-              {...player}
-              handlePlayerDelete={handlePlayerDelete}
-            />
-          </div>
-        ))}
-      </div>
+        <div className="row" ref={object.myRefEscoltas}>
+          <h4 className="jugadores">Escoltas</h4>
+          {escoltaPlayers?.map((player) => (
+            <div className="col-4">
+              <PlayerCard
+                key={player._id}
+                {...player}
+                handlePlayerDelete={handlePlayerDelete}
+              />
+            </div>
+          ))}
+        </div>
 
-      <div className="row">
-        <h4 className="jugadores">Ala-Pívot</h4>
-        {alaPivotPlayers?.map((player) => (
-          <div className="col-4">
-            <PlayerCard
-              key={player._id}
-              {...player}
-              handlePlayerDelete={handlePlayerDelete}
-            />
-          </div>
-        ))}
-      </div>
+        <div className="row" ref={object.myRefAleros}>
+          <h4 className="jugadores">Aleros</h4>
+          {aleroPlayers?.map((player) => (
+            <div className="col-4">
+              <PlayerCard
+                key={player._id}
+                {...player}
+                handlePlayerDelete={handlePlayerDelete}
+              />
+            </div>
+          ))}
+        </div>
 
-      <div className="row">
-        <h4 className="jugadores">Pívots</h4>
-        {pivotPlayers?.map((player) => (
-          <div className="col-4">
-            <PlayerCard
-              key={player._id}
-              {...player}
-              handlePlayerDelete={handlePlayerDelete}
-            />
-          </div>
-        ))}
-      </div>
+        <div className="row" ref={object.myRefAlaPivot}>
+          <h4 className="jugadores">Ala-Pívot</h4>
+          {alaPivotPlayers?.map((player) => (
+            <div className="col-4">
+              <PlayerCard
+                key={player._id}
+                {...player}
+                handlePlayerDelete={handlePlayerDelete}
+              />
+            </div>
+          ))}
+        </div>
 
-      <div className="row">
-        <h3 className="staff">Staff</h3>
-        {staff?.map((staff) => (
-          <div className="col-4">
-            <StaffCard
-              className="col-4"
-              key={staff._id}
-              {...staff}
-              handleStaffDelete={handleStaffDelete}
-            />
-          </div>
-        ))}
+        <div className="row" ref={object.myRefPivots}>
+          <h4 className="jugadores">Pívots</h4>
+          {pivotPlayers?.map((player) => (
+            <div className="col-4">
+              <PlayerCard
+                key={player._id}
+                {...player}
+                handlePlayerDelete={handlePlayerDelete}
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className="row" id={staff} ref={object.myRefStaff}>
+          <h3 className="staff">Staff</h3>
+          {staff?.map((staff) => (
+            <div className="col-4">
+              <StaffCard
+                className="col-4"
+                key={staff._id}
+                {...staff}
+                handleStaffDelete={handleStaffDelete}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 }
