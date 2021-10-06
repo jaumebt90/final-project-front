@@ -38,7 +38,6 @@ function Jugadas() {
 
   return (
     <div className="jugadasListPage">
-      <h1>Jugadas</h1>
       <div className="row">
         <h2 className="jugadas">Ataque</h2>
         {attackPlays?.map((jugada) => (

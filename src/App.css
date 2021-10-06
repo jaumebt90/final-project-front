@@ -249,4 +249,13 @@
   border-bottom: solid black 1px;
 }
 
+.JugadaCard {
+  border: rgb(51, 75, 148) solid 3px;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
 
+.jugadasListPage {
+  margin-top: 100px;
+}
