@@ -5,7 +5,6 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import OneNewPage from "./pages/OneNewPage";
 import Jugadas from "./pages/Jugadas";
-import Pretemporada from "./pages/Pretemporada";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import PrivateRoute from "./components/PrivateRoute"; // <== IMPORT
@@ -33,7 +32,6 @@ function App() {
         <PrivateRoute path="/profile" component={Profile} />
         <PrivateRoute exact path="/plays" component={Jugadas} />
         <PrivateRoute exact path="/plays/edit/:id" component={EditPlayPage} />
-        <PrivateRoute exact path="/pretemporada" component={Pretemporada} />
         <PrivateRoute exact path="/news/edit/:id" component={EditNewPage} />
         <PrivateRoute exact path="/staff/edit/:id" component={EditStaffPage} />
         <PrivateRoute

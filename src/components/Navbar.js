@@ -61,13 +61,7 @@ function Barra() {
                       >
                         Jugadas
                       </Nav.Link>
-                      <Nav.Link
-                        onClick={() => {
-                          history.push("/pretemporada");
-                        }}
-                      >
-                        Pretemporada
-                      </Nav.Link>
+
                       <NavDropdown.Divider />
                       <Nav.Link onClick={logOutUser}>Logout</Nav.Link>
                     </>

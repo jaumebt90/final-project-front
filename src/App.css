@@ -78,7 +78,7 @@
 .texto {
   justify-content: center;
   display: flex;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: 600px;
   margin-right: 600px;
 }
@@ -234,4 +234,8 @@
 
 .homepage {
   margin-top: 150px;
+}
+
+.whoare {
+  margin-top: 70px;
 }

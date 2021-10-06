@@ -96,14 +96,19 @@ function Club() {
   return (
     <div className="club">
       <h1 className="welcome">Bienvenidos al Club Baloncesto Sant Joan</h1>
-      <h2>¿Quienes somos?</h2>
+      <h2 className="whoare">¿Quienes somos?</h2>
       <div className="texto">
         <p>
-          Somos el <b>Club Baloncesto Sant Joan</b>. Somos un equipo formado para disfrutar de este maravilloso deporte y competir en la
-          la provincia de Alicante. Actualmente el equipo se sitúa en la <b>Categoría Senior</b> <i>(2ª Zonal)</i>
+          Somos el <b>Club Baloncesto Sant Joan</b>. Somos un equipo formado
+          para disfrutar de este maravilloso deporte y competir en la la
+          provincia de Alicante. Actualmente el equipo se sitúa en la{" "}
+          <b>Categoría Senior</b> <i>(2ª Zonal)</i>
         </p>
-        <p>El club se fundó en <b>FECHA</b> y desde entonces no ha parado de competir y atraer nuevos jugadores a sus filas. 
-        A continuación podréis encontrar la lista de la Plantilla Oficial para la temporada 21/22 </p>
+        <p>
+          El club se fundó en <b>FECHA</b> y desde entonces no ha parado de
+          competir y atraer nuevos jugadores a sus filas. A continuación podréis
+          encontrar la lista de la Plantilla Oficial para la temporada 21/22{" "}
+        </p>
       </div>
       <h2 className="plantilla">Plantilla 2021/2022</h2>
 
