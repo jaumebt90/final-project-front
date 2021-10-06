@@ -1,4 +1,5 @@
 import axios from "axios";
+import ReactMarkdown from "react-markdown";
 import NewCard from "./../components/NewCard";
 import { AuthContext } from "./../context/auth.context";
 import { useState, useEffect, useContext } from "react";
@@ -25,12 +26,12 @@ export default function OneNewPage(props) {
     getNew();
   }, []);
 
-
   return (
     <div className="oneNew">
       <h1>{notice?.title}</h1>
       <div>
-        <p className="textdescrip">{notice?.description}</p>
+        {/* <p className="textdescrip">{notice?.description}</p> */}
+        <ReactMarkdown children={notice?.description} />
       </div>
     </div>
   );

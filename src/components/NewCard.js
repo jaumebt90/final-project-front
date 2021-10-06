@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 import { useEffect, useContext } from "react";
 import { AuthContext } from "./../context/auth.context";
 import axios from "axios";
@@ -25,11 +26,12 @@ function NewCard({ title, description, _id, handleDelete }) {
   return (
     <div className="newCard card">
       <Link to={`/news/${_id}`}>
-        <h3 className='newtittle'>{title}</h3>
+        <h3 className="newtittle">{title}</h3>
       </Link>
       <div className="descrip">
         {/* <p style={{ maxWidth: "400px" }}>{description} </p> */}
-        <p style={{ maxWidth: "400px" }}>{shortedDescription()} </p>
+        {/* <p style={{ maxWidth: "400px" }}>{shortedDescription()} </p> */}
+        <ReactMarkdown children={shortedDescription()} />
       </div>
       {userData && userData.rol === "coach" ? (
         <div className="botones">

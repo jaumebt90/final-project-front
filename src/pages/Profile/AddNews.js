@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MDEditor from "@uiw/react-md-editor";
 import axios from "axios";
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -43,14 +44,15 @@ export default function AddNews() {
         <input type="text" name="title" value={title} onChange={handleTitle} />
 
         <label>Descripción</label>
-        <textarea
+        {/* <textarea
           type="text"
           rows="10"
           cols="50"
           name="description"
           value={description}
           onChange={handleDescription}
-        />
+        /> */}
+        <MDEditor value={description} onChange={setDescription} />
 
         <button onClick={handleSubmit}>Crear Noticia</button>
       </form>

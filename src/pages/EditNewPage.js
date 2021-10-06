@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import MDEditor from "@uiw/react-md-editor";
 import { useState, useEffect } from "react";
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -34,12 +35,9 @@ export default function EditNewPage(props) {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .put(
-        `${API_URL}/news/${newId}`, 
-        requestBody, 
-        {
-            headers: { Authorization: `Bearer ${storedToken}` },
-        })
+      .put(`${API_URL}/news/${newId}`, requestBody, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
       .then((response) => {
         props.history.push(`/`);
       });
@@ -57,13 +55,14 @@ export default function EditNewPage(props) {
         />
 
         <label>Description:</label>
-        <textarea
+        {/* <textarea
           name="description"
           rows="10"
           cols="50"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-        />
+        /> */}
+        <MDEditor value={description} onChange={setDescription} />
 
         <button type="submit">Actualizar noticia</button>
       </form>
