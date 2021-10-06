@@ -45,6 +45,8 @@ export default function AddNews() {
         <label>Descripción</label>
         <textarea
           type="text"
+          rows="10"
+          cols="50"
           name="description"
           value={description}
           onChange={handleDescription}

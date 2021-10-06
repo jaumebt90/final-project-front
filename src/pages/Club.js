@@ -104,13 +104,13 @@ function Club() {
           provincia de Alicante. Actualmente el equipo se sitúa en la{" "}
           <b>Categoría Senior</b> <i>(2ª Zonal)</i>
         </p>
+
         <p>
-          El club se fundó en <b>FECHA</b> y desde entonces no ha parado de
-          competir y atraer nuevos jugadores a sus filas. A continuación podréis
-          encontrar la lista de la Plantilla Oficial para la temporada 21/22{" "}
+          El club se fundó en la temporada <b>2014/2015</b> y desde entonces no
+          ha parado de competir y atraer nuevos jugadores a sus filas. A
+          continuación podréis encontrar la lista de la Plantilla Oficial para
+          la temporada 21/22{" "}
         </p>
-        <p>El club se fundó en la temporada <b>2014/2015</b> y desde entonces no ha parado de competir y atraer nuevos jugadores a sus filas. 
-        A continuación podréis encontrar la lista de la Plantilla Oficial para la temporada 21/22 </p>
       </div>
       <h2 className="plantilla">Plantilla 2021/2022</h2>
 

@@ -30,3 +30,8 @@
 .nombreperfil {
   margin-top: 20px;
 }
+
+.app-body {
+  padding-top: 66px;
+  min-height: 85vh;
+}
