@@ -115,7 +115,7 @@
   margin-bottom: 40px;
   margin-top: 60px;
   text-align: start;
-  margin-left: 130px;
+  margin-left: 115px;
   border-bottom: solid black 1px;
 }
 
@@ -226,4 +226,12 @@
   position: relative;
   bottom: 0;
   width: 100%;
+}
+
+.club {
+  margin-top: 150px;
+}
+
+.homepage {
+  margin-top: 150px;
 }

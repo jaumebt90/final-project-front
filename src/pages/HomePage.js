@@ -38,7 +38,7 @@ function HomePage() {
   };
 
   return (
-    <div>
+    <div className='homepage'>
       <h1 className="home">Home Page</h1>
       <Carrousel />
       <div className="home-news">
