@@ -76,6 +76,7 @@
 }
 
 .texto {
+  flex-direction: column;
   justify-content: center;
   display: flex;
   margin-top: 30px;
@@ -193,6 +194,7 @@
 }
 
 .noticiero {
+  border-bottom: 1px solid black;
   display: flex;
   margin-left: 50px;
   text-align: center;
@@ -239,3 +241,12 @@
 .whoare {
   margin-top: 70px;
 }
+.jugadas {
+  margin-bottom: 40px;
+  margin-top: 60px;
+  text-align: start;
+  margin-left: 130px;
+  border-bottom: solid black 1px;
+}
+
+

@@ -39,25 +39,29 @@ function Jugadas() {
   return (
     <div className="jugadasListPage">
       <h1>Jugadas</h1>
-      <div>
-      <h2>Ataque</h2>
+      <div className="row">
+        <h2 className="jugadas">Ataque</h2>
         {attackPlays?.map((jugada) => (
-          <JugadaCard
-            key={jugada._id}
-            {...jugada}
-            handlePlayDelete={handlePlayDelete}
-          />
+          <div className="col-4">
+            <JugadaCard
+              key={jugada._id}
+              {...jugada}
+              handlePlayDelete={handlePlayDelete}
+            />
+          </div>
         ))}
       </div>
 
-      <div>
-        <h2>Defensa</h2>
+      <div className="row">
+        <h2 className="jugadas">Defensa</h2>
         {defensePlays?.map((jugada) => (
-          <JugadaCard
-            key={jugada._id}
-            {...jugada}
-            handlePlayDelete={handlePlayDelete}
-          />
+          <div className="col-4">
+            <JugadaCard
+              key={jugada._id}
+              {...jugada}
+              handlePlayDelete={handlePlayDelete}
+            />
+          </div>
         ))}
       </div>
     </div>
