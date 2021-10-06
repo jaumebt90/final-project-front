@@ -119,6 +119,15 @@
   border-bottom: solid black 1px;
 }
 
+.newCard {
+  background-color: white;
+  border: rgb(51, 75, 148) solid 3px;
+}
+
+.newtittle {
+  margin-bottom: 25px;
+}
+
 .contenedor {
   width: 1650px;
 }
@@ -132,7 +141,7 @@
 }
 
 .botoplant {
-  background-color: blanchedalmond;
+  background-color: rgb(247, 247, 247);
   border: none;
 }
 
@@ -209,5 +218,3 @@
   margin-left: 600px;
   margin-right: 600px;
 }
-
-

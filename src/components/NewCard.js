@@ -25,7 +25,7 @@ function NewCard({ title, description, _id, handleDelete }) {
   return (
     <div className="newCard card">
       <Link to={`/news/${_id}`}>
-        <h3>{title}</h3>
+        <h3 className='newtittle'>{title}</h3>
       </Link>
       <div className="descrip">
         {/* <p style={{ maxWidth: "400px" }}>{description} </p> */}

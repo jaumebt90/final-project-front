@@ -42,7 +42,7 @@ function HomePage() {
       <h1 className="home">Home Page</h1>
       <Carrousel />
       <div className="home-news">
-        <h2 className="noticiero">Últimas noticias</h2>
+        <h2 className="noticiero">Tablón anuncios</h2>
         <div className="row">
           {isLoading ? (
             <p>Loading...</p>
