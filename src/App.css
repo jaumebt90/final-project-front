@@ -146,6 +146,11 @@
   border: none;
 }
 
+.botoplant:hover {
+  background-color: rgb(51, 75, 148);
+  color: white;
+}
+
 .playercard {
   background-color: white;
   border-radius: 10%;
