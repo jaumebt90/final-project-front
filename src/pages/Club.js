@@ -95,17 +95,17 @@ function Club() {
 
   return (
     <div className="club">
-      <h1 className="welcome">Bienvenidos al +++++++++++++</h1>
+      <h1 className="welcome">Bienvenidos al Club Baloncesto Sant Joan</h1>
+      <h2>¿Quienes somos?</h2>
       <div className="texto">
         <p>
-          Su primera temporada en el 'antiguo' San Paolo, lastrada por una
-          lesión de hombro, no fue excelsa. Aún así, marcó 10 goles en 1.866
-          minutos. Ahora, en cambio, no hay quien le pare. 'Osi' suma seis goles
-          -cuatro en Liga- y una asistencia en seis partidos. Una racha que
-          tratará de ampliar en la UEFA Europa League frente al Spartak Moscú.
+          Somos el <b>Club Baloncesto Sant Joan</b>. Somos un equipo formado para disfrutar de este maravilloso deporte y competir en la
+          la provincia de Alicante. Actualmente el equipo se sitúa en la <b>Categoría Senior</b> <i>(2ª Zonal)</i>
         </p>
+        <p>El club se fundó en <b>FECHA</b> y desde entonces no ha parado de competir y atraer nuevos jugadores a sus filas. 
+        A continuación podréis encontrar la lista de la Plantilla Oficial para la temporada 21/22 </p>
       </div>
-      <h2 className="plantilla">Plantilla</h2>
+      <h2 className="plantilla">Plantilla 2021/2022</h2>
 
       <div className="botonsplant">
         <button

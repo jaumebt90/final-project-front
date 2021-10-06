@@ -13,7 +13,7 @@ function Barra() {
 
   return (
     <header className="header">
-      <Navbar expand="lg" className="navbar" id="nav">
+      <Navbar expand="lg" className="navbar" id="nav" fixed="top">
         <Container>
           <Link to="/">
             <img className="logo" src={logo} />

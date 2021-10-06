@@ -218,3 +218,12 @@
   margin-left: 600px;
   margin-right: 600px;
 }
+
+.main-footer {
+  color: white;
+  background-color: rgb(51, 75, 148);
+  padding-top: 3em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
