@@ -227,7 +227,7 @@
 }
 
 .main-footer {
-  position: absolute;
+  position: relative;
   color: white;
   background-color: rgb(51, 75, 148);
   padding-top: 3em;
