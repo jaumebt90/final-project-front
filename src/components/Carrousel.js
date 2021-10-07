@@ -12,6 +12,7 @@ function Carrousel() {
             className="carousel d-block w-100"
             src={img1}
             alt="First slide"
+            style={{ width: "500px", height: "500px" }}
           />
         </Carousel.Item>
         <Carousel.Item>
@@ -19,6 +20,7 @@ function Carrousel() {
             className="carousel d-block w-100"
             src={img2}
             alt="Second slide"
+            style={{ width: "500px", height: "500px" }}
           />
         </Carousel.Item>
         {/* <Carousel.Item>

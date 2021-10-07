@@ -38,8 +38,10 @@ function HomePage() {
   };
 
   return (
-    <div className='homepage'>
-      <h1 className="home">Home Page</h1>
+    <div className="homepage">
+      <div className="homepage-title">
+        <h1 className="home">Home Page</h1>
+      </div>
       <Carrousel />
       <div className="home-news">
         <h2 className="noticiero">Tablón anuncios</h2>
