@@ -38,8 +38,8 @@ export default function OnePlayPage(props) {
           width="378px"
         />
       ) : null}
-      <h1>{play?.title}</h1>
-      <p>{play?.description}</p>
+      <h1 className="textjugada">{play?.title}</h1>
+      <p className="textjugada">{play?.description}</p>
     </div>
   );
 }

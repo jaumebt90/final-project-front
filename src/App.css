@@ -228,6 +228,19 @@
   margin-top: 50px;
 }
 
+.onePlay {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.textjugada {
+  display: flex;
+  margin-top: 20px;
+}
+
 .textdescrip {
   margin-top: 40px;
   display: flex;
