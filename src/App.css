@@ -109,7 +109,14 @@
 }
 
 .welcome {
-  margin-top: 30px;
+  margin-top: 10px;
+}
+
+.clubtop {
+  border: rgb(51, 75, 148) solid 3px;
+  margin-top: 60px;
+  margin-left: 105px;
+  margin-right: 105px;
 }
 
 .jugadores {
@@ -247,8 +254,9 @@
 }
 
 .whoare {
-  margin-top: 70px;
+  margin-top: 20px;
 }
+
 .jugadas {
   margin-bottom: 40px;
   margin-top: 60px;
