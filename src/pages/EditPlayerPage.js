@@ -48,7 +48,7 @@ export default function EditPlayerPage(props) {
   };
 
   return (
-    <div>
+    <div className="form-player-edit">
       <form onSubmit={handleFormSubmit}>
         <label>Nombre:</label>
         <input

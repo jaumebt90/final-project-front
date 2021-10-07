@@ -329,3 +329,7 @@
   background-color: rgba(247, 247, 247, 0.1);
   border: solid black 1px;
 }
+
+.form-player-edit {
+  margin-top: 100px;
+}
