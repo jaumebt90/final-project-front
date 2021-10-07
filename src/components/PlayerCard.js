@@ -16,7 +16,7 @@ function PlayerCard({
 }) {
   const { userData } = useContext(AuthContext);
   return (
-    <div className="PlayerCard card" style={{ height: "520px" }}>
+    <div className="PlayerCard card" style={{ height: "625px" }}>
       <div className="playercard">
         {image ? (
           <img
@@ -29,7 +29,7 @@ function PlayerCard({
           <img src={imagen} alt="" />
         )}
       </div>
-      <h3>{name}</h3>
+      <h3 className="player-name">{name}</h3>
       <div className="infocard">
         <p style={{ maxWidth: "400px" }}>
           <u>Apodo: </u>

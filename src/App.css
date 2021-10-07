@@ -204,6 +204,11 @@
 .botones {
   display: flex;
   justify-content: center;
+  margin-top: auto;
+}
+
+.player-name {
+  margin-top: 15px;
 }
 
 .noticiero {
