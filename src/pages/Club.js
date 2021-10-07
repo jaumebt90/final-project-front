@@ -81,7 +81,6 @@ function Club() {
   );
 
   const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
-  // General scroll to element function
 
   const object = {
     myRefBases: useRef(null),
