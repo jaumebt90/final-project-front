@@ -67,7 +67,6 @@
   align-items: center;
   justify-content: center;
   height: 300px;
-  /* background-color: blueviolet; */
 }
 
 .left {
@@ -93,12 +92,6 @@
   margin-right: 600px;
 }
 
-/* .home-news {
-  margin-top: 100px;
-  display: flex;
-  flex-direction: row;
-} */
-
 .players {
   display: flex;
   display: inline-flex;
@@ -109,7 +102,6 @@
 }
 
 .staff {
-  /* text-decoration-line: underline; */
   margin-bottom: 30px;
   margin-top: 60px;
   text-align: start;
@@ -150,6 +142,12 @@
 
 .newtittle {
   margin-bottom: 25px;
+}
+
+.descrip {
+  justify-content: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .contenedor {
@@ -238,14 +236,20 @@
   margin-bottom: 50px;
 }
 
-.descrip {
-  justify-content: left;
-  display: flex;
-  flex-direction: column;
-}
-
 .oneNew {
   margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* margin-left: 300px;
+  margin-right: 300px; */
+}
+
+.one-description {
+  margin-top: 50px;
+  margin-left: 400px;
+  margin-right: 400px;
 }
 
 .onePlay {

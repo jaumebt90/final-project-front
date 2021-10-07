@@ -44,14 +44,6 @@ export default function AddNews() {
         <input type="text" name="title" value={title} onChange={handleTitle} />
 
         <label>Descripción</label>
-        {/* <textarea
-          type="text"
-          rows="10"
-          cols="50"
-          name="description"
-          value={description}
-          onChange={handleDescription}
-        /> */}
         <MDEditor value={description} onChange={setDescription} />
 
         <button onClick={handleSubmit}>Crear Noticia</button>

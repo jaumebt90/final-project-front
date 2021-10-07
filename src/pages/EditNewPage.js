@@ -55,13 +55,6 @@ export default function EditNewPage(props) {
         />
 
         <label>Description:</label>
-        {/* <textarea
-          name="description"
-          rows="10"
-          cols="50"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        /> */}
         <MDEditor value={description} onChange={setDescription} />
 
         <button type="submit">Actualizar noticia</button>
