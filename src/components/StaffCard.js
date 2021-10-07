@@ -4,13 +4,30 @@ import { AuthContext } from "./../context/auth.context";
 import imagen from "../assets/images.png";
 
 // We are deconstructing props object directly in the parentheses of the function
-function StaffCard({ name, alias, position, hobbie, _id, handleStaffDelete }) {
+function StaffCard({
+  image,
+  name,
+  alias,
+  position,
+  hobbie,
+  _id,
+  handleStaffDelete,
+}) {
   const { userData, isCoach } = useContext(AuthContext);
 
   return (
     <div className="StaffCard card">
       <div className="staffcard">
-        <img src={imagen} alt=""></img>
+        {image ? (
+          <img
+            className="playercard"
+            src={image}
+            alt=""
+            style={{ width: "278px", height: "290px" }}
+          />
+        ) : (
+          <img src={imagen} alt=""></img>
+        )}
       </div>
       <h3>{name}</h3>
       <div className="infocard">

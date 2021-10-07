@@ -69,9 +69,11 @@ function Club() {
   let alaPivotPlayers = players.filter(
     (player) =>
       player.position === "Ala-pívot" ||
+      player.position === "Ala-Pívot" ||
       player.position === "Ala Pívot" ||
       player.position === "Ala pívot" ||
       player.position === "Ala-pivot" ||
+      player.position === "Ala-Pivot" ||
       player.position === "Ala Pivot" ||
       player.position === "Ala pivot"
   );
@@ -95,7 +97,7 @@ function Club() {
   return (
     <div className="club">
       <h1 className="welcome">Bienvenidos al Club Baloncesto Sant Joan</h1>
-      <div className='clubtop'>
+      <div className="clubtop">
         <h2 className="whoare">¿Quienes somos?</h2>
         <div className="texto">
           <p>
@@ -106,8 +108,8 @@ function Club() {
           </p>
 
           <p>
-            El club se fundó en la temporada <b>2014/2015</b> y desde entonces no
-            ha parado de competir y atraer nuevos jugadores a sus filas. A
+            El club se fundó en la temporada <b>2014/2015</b> y desde entonces
+            no ha parado de competir y atraer nuevos jugadores a sus filas. A
             continuación podréis encontrar la lista de la Plantilla Oficial para
             la temporada 21/22{" "}
           </p>
