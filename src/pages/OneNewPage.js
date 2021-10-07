@@ -30,7 +30,6 @@ export default function OneNewPage(props) {
     <div className="oneNew">
       <h1>{notice?.title}</h1>
       <div className="one-description">
-        {/* <p className="textdescrip">{notice?.description}</p> */}
         <ReactMarkdown children={notice?.description} />
       </div>
     </div>

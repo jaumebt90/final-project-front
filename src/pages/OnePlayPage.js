@@ -26,7 +26,6 @@ export default function OnePlayPage(props) {
     getPlay();
   }, []);
 
-  console.log(play);
 
   return (
     <div className="onePlay">

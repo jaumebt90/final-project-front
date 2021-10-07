@@ -23,13 +23,6 @@ function Carrousel() {
             style={{ width: "500px", height: "500px" }}
           />
         </Carousel.Item>
-        {/* <Carousel.Item>
-          <img
-            className="carousel d-block w-100"
-            src={img3}
-            alt="Third slide"
-          />
-        </Carousel.Item> */}
       </Carousel>
     </div>
   );

@@ -25,14 +25,12 @@ function LoginPage(props) {
   const handlePassword = (e) => setPassword(e.target.value);
 
   const handleLoginSubmit = (e) => {
-    // console.log("HOLA QUE TAL");
     e.preventDefault();
     const requestBody = { email, password };
 
     axios
       .post(`${API_URL}/auth/login`, requestBody)
       .then((response) => {
-        // console.log(response.data)
         console.log("JWT token", response.data.authToken);
 
         const token = response.data.authToken;

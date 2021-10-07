@@ -14,10 +14,9 @@ function Profile() {
   const { userData, isCoach, verifyCoach } = useContext(AuthContext);
 
 
-  console.log(userData);
 
   return (
-    <div>
+    <div className="profile-div">
       <h1 className="nombreperfil">Bienvenido {userData.name}</h1>
       <div className="inner-container">
         <div className="menu">

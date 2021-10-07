@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 const API_URL = process.env.REACT_APP_API_URL;
 
 export default function EditPlayPage(props) {
-    console.log(props.match.params.id);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const playId = props.match.params.id;

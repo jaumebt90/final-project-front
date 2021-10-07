@@ -33,7 +33,6 @@ export default function AddPlays() {
   };
 
   const handleType = (e) => {
-    console.log(e.target.value);
     setType(e.target.value);
   };
 

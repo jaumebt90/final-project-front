@@ -65,7 +65,7 @@ function AuthProviderWrapper(props) {
   };
 
   const logOutUser = () => {
-    console.log("ESTA LOGOUT")
+
     // Upon logout, remove the token from the localStorage
     localStorage.removeItem("authToken");
     setIsLoggedIn(false);

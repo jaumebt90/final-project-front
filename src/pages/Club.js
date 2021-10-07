@@ -22,7 +22,6 @@ function Club() {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        //console.log("miembros equipo", response.data);
         setStaff(response.data);
       })
       .catch((error) => console.log(error));

@@ -38,19 +38,12 @@
 }
 
 .carousel {
-  /*max-width: 1000px;
-  max-height: 500px;*/
   margin-top: 20px;
   object-fit: scale-down;
   display: flex;
   justify-content: center;
 }
 
-/*.carousel img {
-  max-width: 1000px;
-  /* max-height: 200px;
-  object-fit: contain; 
-}*/
 .navbar {
   background-color: rgb(51, 75, 148);
 }
@@ -242,8 +235,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* margin-left: 300px;
-  margin-right: 300px; */
 }
 
 .one-description {

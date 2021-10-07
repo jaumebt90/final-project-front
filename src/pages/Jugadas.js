@@ -34,7 +34,6 @@ function Jugadas() {
 
   let defensePlays = jugadas.filter((jugada) => jugada.type === "Defensa");
 
-  console.log(jugadas);
 
   return (
     <div className="jugadasListPage">

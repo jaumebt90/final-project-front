@@ -10,12 +10,8 @@ const API_URL = process.env.REACT_APP_API_URL;
 function NewCard({ title, description, _id, handleDelete }) {
   const { userData, isCoach } = useContext(AuthContext);
 
-  // useEffect(() => {
-
-  // }, []);
 
   const shortedDescription = () => {
-    console.log("ENTRA EN LA DESCRIPCIÓN", description);
     if (description?.length > 220) {
       return description.substring(0, 220) + "...";
     } else {
@@ -29,8 +25,6 @@ function NewCard({ title, description, _id, handleDelete }) {
         <h3 className="newtittle">{title}</h3>
       </Link>
       <div className="descrip">
-        {/* <p style={{ maxWidth: "400px" }}>{description} </p> */}
-        {/* <p style={{ maxWidth: "400px" }}>{shortedDescription()} </p> */}
         <ReactMarkdown children={shortedDescription()} />
       </div>
       {userData && userData.rol === "coach" ? (

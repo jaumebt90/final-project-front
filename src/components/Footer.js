@@ -5,7 +5,7 @@ export default function Footer() {
     <div className="main-footer">
       <div className="container">
         <div className="row">
-          {/* columna 1 */}
+
           <div className="col">
             <h4> Created by: </h4>
             <ul className="list-unstyled">
@@ -13,7 +13,7 @@ export default function Footer() {
               <li>Jaume Ballester </li>
             </ul>
           </div>
-          {/* columna 2 */}
+
           <div className="col">
             <h4> Ironhack </h4>
             <ul className="list-unstyled">
@@ -21,7 +21,7 @@ export default function Footer() {
               <li>Barcelona 2021</li>
             </ul>
           </div>
-          {/* columna 3 */}
+
         </div>
       </div>
     </div>

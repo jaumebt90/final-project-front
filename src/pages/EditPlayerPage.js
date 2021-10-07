@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 const API_URL = process.env.REACT_APP_API_URL;
 
 export default function EditPlayerPage(props) {
-  console.log(props);
   const [name, setName] = useState("");
   const [alias, setAlias] = useState("");
   const [number, setNumber] = useState("");
