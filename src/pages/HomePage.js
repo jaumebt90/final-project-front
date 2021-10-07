@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from "react";
+import logo from "./../assets/logoBlanco.jpeg";
 import Carrousel from "../components/Carrousel";
 import axios from "axios";
 import NewCard from "./../components/NewCard";
@@ -39,7 +40,11 @@ function HomePage() {
 
   return (
     <div className="homepage">
-      <div className="homepage-title"></div>
+      <div className="homepage-title">
+        <h1>
+          <img src={logo} /> CB RACING SANT JOAN D'ALACANT
+        </h1>
+      </div>
       <Carrousel />
       <div className="home-news">
         <h2 className="noticiero">Tablón anuncios</h2>
